@@ -13,4 +13,4 @@ app.use(express.json())
 // STARTING THE SERVER
 app.listen(app.get('port'), () => {
     console.log('Server started on port: ',app.get('port'))
-})
+})   
