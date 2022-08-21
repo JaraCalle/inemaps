@@ -5,6 +5,9 @@ const initializePassport = require('../passportConfig')
 
 const {pool} = require('../dbConfig')
 const bcrypt = require('bcrypt')
+const today = new Date();
+
+const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
 initializePassport(passport)
 
@@ -28,6 +31,49 @@ router.get('/users/logout', (req,res) => {
     req.logOut()
     req.flash('succes_msg', 'You have logged out')
     res.redirect('/users/login')
+})
+
+//BLOQUES Y COMENTARIOS
+
+router.get('/bloques', (req,res) => {
+    res.render('bloques');
+})
+
+
+router.get('/posts', (req,res) => {
+    pool.query('SELECT * FROM posts', (err, results) => {
+        if(err){
+            throw err
+        }
+        //console.log(results.rows)
+        res.json(results.rows)
+    })
+})
+
+router.get('/crear/post', (req,res) => {
+    res.render('createPosts');
+})
+
+router.post('/crear/post',(req,res) => {
+    const {id} = req.user
+    const {description, categoria} = req.body
+    if(req.isAuthenticated()){
+        pool.query(`INSERT INTO posts(fechapublicacion, descripcion, categoria, codigoestudiante) VALUES ('${date}', '${description}', '${categoria}', ${id})`, (err,results) => {
+            if(err){
+                throw err
+            }
+            else{
+                res.redirect('/crear/post');
+            }
+        });
+    }else{
+        res.send('received')
+    }
+    
+})
+
+router.get('/posts/:id', (req,res) => {
+    res.render('post')
 })
 
 router.post('/users/register', async(req,res) => {
