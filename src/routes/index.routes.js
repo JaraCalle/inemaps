@@ -27,11 +27,14 @@ router.get('/users/dashboard', checkNotAunthenticated, (req, res) => {
     res.render('dashboard', { user: req.user.name })
 })
 
-router.get('/users/logout', (req, res) => {
-    req.logOut()
+router.get('/users/logout', (req, res, next) => {
+  req.logout(function(err) {
+    if (err) { return next(err); }
     req.flash('succes_msg', 'You have logged out')
     res.redirect('/users/login')
-})
+  });
+});
+
 
 //BLOQUES Y COMENTARIOS
 
