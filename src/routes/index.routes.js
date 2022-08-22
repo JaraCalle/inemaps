@@ -62,6 +62,10 @@ router.post('/crear/post', (req, res) => {
             if (err) {
                 throw err
             }
+            else {
+                req.flash('succes_msg', 'Post added')
+                res.redirect('/posts')
+            }
         });
     } else {
         res.send('received')
