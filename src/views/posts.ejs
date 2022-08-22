@@ -1,0 +1,16 @@
+<%- include('partials/main') %>
+
+<ul>
+    <% if(messages.succes_msg) {%>
+        <li><%= messages.succes_msg%></li>
+    <% } %>
+</ul>
+
+<% for(var i = 0; i < results.rowCount; i++) {%>
+    <p> <%= results.rows[i].idpost %> </p>
+    <p> <%= results.rows[i].fechapublicacion %> </p>
+    <p> <%= results.rows[i].descripcion %> </p>
+    <p> <%= results.rows[i].categoria %> </p>
+    <p> <%= results.rows[i].codigoestudiante %> </p>
+    <hr>
+<% } %>

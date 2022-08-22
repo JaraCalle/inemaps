@@ -1,0 +1,22 @@
+<%- include('partials/main') %>
+
+<p> ID: <%= results.rows[0].idpost %></p>
+<p> fechapublicacion: <%= results.rows[0].fechapublicacion %> </p>
+<p> descripcion: <%= results.rows[0].descripcion%> </p>
+<p> categoria: <%= results.rows[0].categoria%> </p>
+<p> codigoestudiante: <%= results.rows[0].codigoestudiante%> </p>
+
+<hr>
+
+<% if(!resu==0) {%>
+    <h4>COMENTARIOS DEL POST</h4>
+
+    <% for(var i = 0; i < resu.rowCount; i++) { %>
+        <p> idcomentario = <%= resu.rows[i].idcomentario %> </p>
+        <p> descripcion = <%= resu.rows[i].descripcion %> </p>
+        <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %> </p>
+        <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %> </p>
+        <p> idpost = <%= resu.rows[i].idpost %> </p>
+        <hr>
+    <% } %>
+<% } %>
