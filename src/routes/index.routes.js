@@ -12,7 +12,7 @@ const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.ge
 initializePassport(passport)
 
 router.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {req})
 })
 
 router.get('/users/register', checkAunthenticated, (req, res) => {
@@ -76,6 +76,32 @@ router.post('/crear/post', (req, res) => {
 
 })
 
+router.get('/crear/comentario/:id', (req,res) => {
+    if(req.isAuthenticated()){
+        
+        res.render('createComentario', {req})
+    }else {
+        res.redirect('/posts/:id')
+    }
+})
+
+router.post('/crear/comentario/:id', (req,res) => {
+    if(req.isAuthenticated()){
+        const {description} = req.body
+        const {id} = req.user
+        console.log(req.params.id)
+        pool.query(`INSERT INTO comentarios(descripcion, fechapublicacion, codigoestudiante, idpost) VALUES('${description}', '${date}', ${id}, ${req.params.id})`, (err, results) => {
+            if(err){
+                throw err
+            }else {
+                res.redirect(`/posts/${req.params.id}`)
+            }
+        })
+    }else {
+        res.redirect('/')
+    }
+})
+
 router.get('/posts/:id', (req, res) => {
     pool.query(`SELECT * FROM posts WHERE idpost = ${req.params.id}`, (err, results) => {
         if (err) {
@@ -90,9 +116,9 @@ router.get('/posts/:id', (req, res) => {
                     } else {
                         if (resu.rowCount > 0) {
                             console.log(resu.rows)
-                            res.render('post', { results, resu })
+                            res.render('post', { results, resu, req })
                         }else {
-                            res.render('post', {results, resu:0})
+                            res.render('post', {results, resu:0, req})
                         }
                     }
                 })
@@ -160,14 +186,14 @@ router.post('/users/register', async (req, res) => {
 })
 
 router.post('/users/login', passport.authenticate('local', {
-    successRedirect: '/users/dashboard',
+    successRedirect: '/',
     failureRedirect: '/users/login',
     failureFlash: true
 }))
 
 function checkAunthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect('/users/dashboard')
+        return res.redirect('/')
     }
     next()
 }

@@ -1,0 +1,6 @@
+<%- include('partials/main') %>
+
+<form action="/crear/comentario/<%- req.params.id %>" method="POST">
+    <input type="text" name="description" placeholder="Description">
+    <input type="submit" value="Enviar">
+</form>

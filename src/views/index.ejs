@@ -1,4 +1,11 @@
 <%- include('partials/main') %>
 
+<% if(!req.isAuthenticated()) { %>
     <h1>Home</h1>
-    <a href="/users/login">Login</a>
+    <a href="/users/login">Login</a>    
+<% } %>
+
+<% if(req.isAuthenticated()) { %>
+    <h1>Home</h1>
+    <a href="/posts">POST</a>    
+<% } %>
