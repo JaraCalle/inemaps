@@ -1,17 +1,48 @@
-<%- include('partials/main') %>
-
-<ul>
-    <% if(messages.succes_msg) {%>
-        <li><%= messages.succes_msg%></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>Inemaps</title>
+</head>
+<body>
+    <div class="container-nav">
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <nav>
+            <ul>
+                <% if(!req.isAuthenticated()) { %>
+                    <li><a href="/users/login">Login</a>    </li>
+                <% } %>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li><a href="/posts">Publications</a></li>
+                <% } %>
+                <li><a href="/bloques">Blocks</a></li>
+            </ul>
+        </nav>
+        <a href="/"><button>Home</button></a>
+    </div>
+</body>
+<main>
+    <ul>
+        <% if(messages.succes_msg) {%>
+            <li><%= messages.succes_msg%></li>
+        <% } %>
+    </ul>
+    
+    <% for(var i = 0; i < results.rowCount; i++) {%>
+        <p> <%= results.rows[i].idpost %> </p>
+        <p> <%= results.rows[i].fechapublicacion %> </p>
+        <p> <%= results.rows[i].descripcion %> </p>
+        <p> <%= results.rows[i].categoria %> </p>
+        <p> <%= results.rows[i].codigoestudiante %> </p>
+        <a href="/posts/ <%- results.rows[i].idpost %> ">VER POST</a>
+        <hr>
     <% } %>
-</ul>
-
-<% for(var i = 0; i < results.rowCount; i++) {%>
-    <p> <%= results.rows[i].idpost %> </p>
-    <p> <%= results.rows[i].fechapublicacion %> </p>
-    <p> <%= results.rows[i].descripcion %> </p>
-    <p> <%= results.rows[i].categoria %> </p>
-    <p> <%= results.rows[i].codigoestudiante %> </p>
-    <a href="/posts/ <%- results.rows[i].idpost %> ">VER POST</a>
-    <hr>
-<% } %>
+    
+</main>
+</html>

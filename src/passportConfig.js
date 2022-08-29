@@ -63,7 +63,7 @@ const aunthenticateUser = (email, password, done) => {
             `SELECT * FROM users 
             WHERE id = $1`, [id], (err, result) => {
                 if(err){
-                    throw err
+                    throw err;
                 }
                 return done(null, result.rows[0])
             }
@@ -71,4 +71,4 @@ const aunthenticateUser = (email, password, done) => {
     })
 }
 
-module.exports = initialize
+module.exports = initialize;

@@ -1,28 +1,67 @@
-<%- include('partials/main') %>
+<!DOCTYPE html>
+<html lang="en">
 
-    <h1>Login</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>Inemaps</title>
+</head>
 
-    <ul>
-        <% if(messages.succes_msg) {%>
-            <li><%= messages.succes_msg%></li>
-        <% } %>
-    </ul>
+<body>
+    <div class="container-nav">
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
+        <nav>
+            <ul>
+                <% if(!req.isAuthenticated()) { %>
+                    <li><a href="/users/login">Login</a> </li>
+                    <% } %>
 
-    <ul>
-        <% if(messages.error) {%>
-            <li><%= messages.error%></li>
-        <% } %>
-    </ul>
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
+            </ul>
+        </nav>
+        <a href="/"><button>Home</button></a>
+    </div>
 
-    <form action="/users/login" method="POST">
-        <div>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-        </div>
-        <div>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-        </div>
-        <div>
-            <input type="submit" value="Login">
-        </div>
-        <a href="/users/register">U dont have account? Register here</a>
-    </form>
+    <main>
+        <h1>Login</h1>
+
+        <ul>
+            <% if(messages.succes_msg) {%>
+                <li>
+                    <%= messages.succes_msg%>
+                </li>
+                <% } %>
+        </ul>
+
+        <ul>
+            <% if(messages.error) {%>
+                <li>
+                    <%= messages.error%>
+                </li>
+                <% } %>
+        </ul>
+
+        <form action="/users/login" method="POST">
+            <div>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+            <a href="/users/register">U dont have account? Register here</a>
+        </form>
+    </main>
+</body>
+
+</html>

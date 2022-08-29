@@ -1,0 +1,21 @@
+:root {
+    --p-black: #1B1D24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px 5px;
+    background-color: var(--p-black);
+}
+
+.container-logo {
+    cursor: pointer;
+    margin-right: auto;
+}

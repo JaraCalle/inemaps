@@ -16,11 +16,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/users/register', checkAunthenticated, (req, res) => {
-    res.render('register')
+    res.render('register', {req})
 })
 
 router.get('/users/login', checkAunthenticated, (req, res) => {
-    res.render('login')
+    res.render('login', {req})
 })
 
 router.get('/users/dashboard', checkNotAunthenticated, (req, res) => {
