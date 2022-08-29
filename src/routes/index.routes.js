@@ -39,7 +39,7 @@ router.get('/users/logout', (req, res, next) => {
 //BLOQUES Y COMENTARIOS
 
 router.get('/bloques', (req, res) => {
-    res.render('bloques');
+    res.render('bloques', {req});
 })
 
 
@@ -49,12 +49,12 @@ router.get('/posts', (req, res) => {
             throw err
         }
         //console.log(results.rows)
-        res.render('posts', {results})
+        res.render('posts', {req, results})
     })
 })
 
 router.get('/crear/post', (req, res) => {
-    res.render('createPosts');
+    res.render('createPosts', {req});
 })
 
 router.post('/crear/post', (req, res) => {
@@ -151,7 +151,7 @@ router.post('/users/register', async (req, res) => {
     }
 
     if (errors.length > 0) {
-        res.render('register', { errors })
+        res.render('register', { req, errors })
     } else {
         let hashedPassword = await bcrypt.hash(password, 10);
         console.log(hashedPassword)
@@ -165,7 +165,7 @@ router.post('/users/register', async (req, res) => {
             console.log(results.rows)
             if (results.rows.length > 0) {
                 errors.push({ message: "Email already registered" })
-                res.render('register', { errors })
+                res.render('register', { req, errors })
             } else {
                 pool.query(
                     `INSERT INTO users (name,email,password)
