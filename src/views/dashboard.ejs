@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,57 @@
     <link rel="stylesheet" href="nav.css">
     <title>Inemaps</title>
 </head>
+
 <body>
     <div class="container-nav">
-        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
         <nav>
             <ul>
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a>    </li>
-                <% } %>
-                
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
-                <li><a href="/bloques">Blocks</a></li>
+                    <li><a href="/users/login">Login</a> </li>
+                    <% } %>
+
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
             </ul>
         </nav>
         <a href="/"><button>Home</button></a>
     </div>
+
+    <main>
+        <a href="/users/logout">Logout</a>
+        <h1>Hello <%= user %>
+        </h1>
+        <a href="/crear/post">CREAR</a>
+
+    </main>
+
+    <style>
+        :root {
+            --p-black: #1B1D24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2px 5px;
+            background-color: var(--p-black);
+        }
+
+        .container-logo {
+            cursor: pointer;
+            margin-right: auto;
+        }
+    </style>
 </body>
-<main>
-    <a href="/users/logout">Logout</a>
-    <h1>Hello <%= user  %></h1>
-    <a href="/crear/post">CREAR</a>
 
-</main>
 </html>
-

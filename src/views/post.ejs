@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,47 +10,85 @@
     <link rel="stylesheet" href="nav.css">
     <title>Inemaps</title>
 </head>
+
 <body>
     <div class="container-nav">
-        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
         <nav>
             <ul>
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a>    </li>
-                <% } %>
-                
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
-                <li><a href="/bloques">Blocks</a></li>
+                    <li><a href="/users/login">Login</a> </li>
+                    <% } %>
+
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
             </ul>
         </nav>
         <a href="/"><button>Home</button></a>
     </div>
+    
+    <main>
+        <p> ID: <%= results.rows[0].idpost %>
+        </p>
+        <p> fechapublicacion: <%= results.rows[0].fechapublicacion %>
+        </p>
+        <p> descripcion: <%= results.rows[0].descripcion%>
+        </p>
+        <p> categoria: <%= results.rows[0].categoria%>
+        </p>
+        <p> codigoestudiante: <%= results.rows[0].codigoestudiante%>
+        </p>
+
+        <hr>
+
+        <% if(!resu==0) {%>
+            <h4>COMENTARIOS DEL POST</h4>
+
+            <% for(var i=0; i < resu.rowCount; i++) { %>
+                <p> idcomentario = <%= resu.rows[i].idcomentario %>
+                </p>
+                <p> descripcion = <%= resu.rows[i].descripcion %>
+                </p>
+                <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %>
+                </p>
+                <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %>
+                </p>
+                <p> idpost = <%= resu.rows[i].idpost %>
+                </p>
+                <hr>
+                <% } %>
+                    <% } %>
+
+                        <a href="/crear/comentario/<%- req.params.id %>"> a </a>
+
+    </main>
+
+    <style>
+        :root {
+            --p-black: #1B1D24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2px 5px;
+            background-color: var(--p-black);
+        }
+
+        .container-logo {
+            cursor: pointer;
+            margin-right: auto;
+        }
+    </style>
 </body>
-<main>
-    <p> ID: <%= results.rows[0].idpost %></p>
-    <p> fechapublicacion: <%= results.rows[0].fechapublicacion %> </p>
-    <p> descripcion: <%= results.rows[0].descripcion%> </p>
-    <p> categoria: <%= results.rows[0].categoria%> </p>
-    <p> codigoestudiante: <%= results.rows[0].codigoestudiante%> </p>
-    
-    <hr>
-    
-    <% if(!resu==0) {%>
-        <h4>COMENTARIOS DEL POST</h4>
-    
-        <% for(var i = 0; i < resu.rowCount; i++) { %>
-            <p> idcomentario = <%= resu.rows[i].idcomentario %> </p>
-            <p> descripcion = <%= resu.rows[i].descripcion %> </p>
-            <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %> </p>
-            <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %> </p>
-            <p> idpost = <%= resu.rows[i].idpost %> </p>
-            <hr>
-        <% } %>
-    <% } %>
-    
-    <a href="/crear/comentario/<%- req.params.id %>"> a </a>
-    
-</main>
+
 </html>

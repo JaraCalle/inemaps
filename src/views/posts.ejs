@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,40 +10,67 @@
     <link rel="stylesheet" href="nav.css">
     <title>Inemaps</title>
 </head>
+
 <body>
     <div class="container-nav">
-        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
         <nav>
             <ul>
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a>    </li>
-                <% } %>
-                
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
-                <li><a href="/bloques">Blocks</a></li>
+                    <li><a href="/users/login">Login</a> </li>
+                    <% } %>
+
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
             </ul>
         </nav>
         <a href="/"><button>Home</button></a>
     </div>
-</body>
-<main>
-    <ul>
-        <% if(messages.succes_msg) {%>
-            <li><%= messages.succes_msg%></li>
+    <main>
+        <ul>
+            <% if(messages.succes_msg) {%>
+                <li><%= messages.succes_msg%></li>
+            <% } %>
+        </ul>
+        
+        <% for(var i = 0; i < results.rowCount; i++) {%>
+            <p> <%= results.rows[i].idpost %> </p>
+            <p> <%= results.rows[i].fechapublicacion %> </p>
+            <p> <%= results.rows[i].descripcion %> </p>
+            <p> <%= results.rows[i].categoria %> </p>
+            <p> <%= results.rows[i].codigoestudiante %> </p>
+            <a href="/posts/ <%- results.rows[i].idpost %> ">VER POST</a>
+            <hr>
         <% } %>
-    </ul>
-    
-    <% for(var i = 0; i < results.rowCount; i++) {%>
-        <p> <%= results.rows[i].idpost %> </p>
-        <p> <%= results.rows[i].fechapublicacion %> </p>
-        <p> <%= results.rows[i].descripcion %> </p>
-        <p> <%= results.rows[i].categoria %> </p>
-        <p> <%= results.rows[i].codigoestudiante %> </p>
-        <a href="/posts/ <%- results.rows[i].idpost %> ">VER POST</a>
-        <hr>
-    <% } %>
-    
-</main>
+    </main>
+
+
+    <style>
+        :root {
+            --p-black: #1B1D24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2px 5px;
+            background-color: var(--p-black);
+        }
+
+        .container-logo {
+            cursor: pointer;
+            margin-right: auto;
+        }
+    </style>
+</body>
+
 </html>

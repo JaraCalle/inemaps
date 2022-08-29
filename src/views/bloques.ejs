@@ -11,12 +11,18 @@
 </head>
 <body>
     <div class="container-nav">
-        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
         <nav>
             <ul>
-                <li><a href="/bloques">Blocks</a></li>
-                <li><a href="/bloques">Login</a></li>
-                <li><a href="/bloques">Publications</a></li>
+                <% if(!req.isAuthenticated()) { %>
+                    <li><a href="/users/login">Login</a> </li>
+                    <% } %>
+
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
             </ul>
         </nav>
         <a href="/"><button>Home</button></a>
@@ -24,5 +30,29 @@
     <main>
         <h1>Hi, you're now in the blocks section</h1>
     </main>
+
+    <style>
+        :root {
+            --p-black: #1B1D24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2px 5px;
+            background-color: var(--p-black);
+        }
+
+        .container-logo {
+            cursor: pointer;
+            margin-right: auto;
+        }
+    </style>
 </body>
 </html>
