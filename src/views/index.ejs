@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container-nav">
+    <section class="container-nav">
         <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
                 alt="Inemaps Logo"></a>
         <nav>
@@ -27,7 +27,7 @@
             </ul>
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
-    </div>
+    </section>
 
 
     <section class="sobre-nosotros">
@@ -57,61 +57,62 @@
                 ipsum?
             </p>
         </div>
-
-        <div class="integrante-1">
-            <div class="contenido">
-                <div class="contenido-profile">
-                    <img src="https://i.postimg.cc/VkYxGw9d/profile-pic-1.jpg" alt="Nicky Florez">
-                </div>
-                <div class="contenido-text">
-                    <h3>Nicky Florez</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
-                </div>
-            </div>
-        </div>
-        <div class="integrante-2">
-            <div class="contenido">
-                <div class="contenido-profile">
-                    <img src="https://i.postimg.cc/DfP5CXxP/profile-pic-2.png" alt="Juan David">
-                </div>
-                <div class="contenido-text">
-                    <h3>Juan David</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+        <div class="integrantes">
+            <div class="integrante 1">
+                <div class="contenido">
+                    <div class="contenido-profile">
+                        <img src="https://i.postimg.cc/VkYxGw9d/profile-pic-1.jpg" alt="Nicky Florez">
+                    </div>
+                    <div class="contenido-text">
+                        <h3>Nicky Florez</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="integrante-3">
-            <div class="contenido">
-                <div class="contenido-profile">
-                    <img src="https://i.postimg.cc/j2fDFPbQ/profile-pic-3.png" alt="Juan Jose Jara">
-                </div>
-                <div class="contenido-text">
-                    <h3>Juan Jose Jara</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
-                </div>
-            </div>
-        </div>
-        <div class="integrante-4">
-            <div class="contenido">
-                <div class="contenido-profile">
-                    <img src="https://i.postimg.cc/RF6hWKN5/profile-pic-4.png" alt="Jimena Munoz">
-                </div>
-                <div class="contenido-text">
-                    <h3>Jimena Mu&ntilde;oz</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+            <!-- <div class="integrante 2">
+                <div class="contenido">
+                    <div class="contenido-profile">
+                        <img src="https://i.postimg.cc/DfP5CXxP/profile-pic-2.png" alt="Juan David">
+                    </div>
+                    <div class="contenido-text">
+                        <h3>Juan David</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="integrante-5">
-            <div class="contenido">
-                <div class="contenido-profile">
-                    <img src="https://i.postimg.cc/15ZXzgS2/profile-pic-5.png" alt="Daniel Santana">
-                </div>
-                <div class="contenido-text">
-                    <h3>Daniel Santana</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+            <div class="integrante 3">
+                <div class="contenido">
+                    <div class="contenido-profile">
+                        <img src="https://i.postimg.cc/j2fDFPbQ/profile-pic-3.png" alt="Juan Jose Jara">
+                    </div>
+                    <div class="contenido-text">
+                        <h3>Juan Jose Jara</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+                    </div>
                 </div>
             </div>
+            <div class="integrante 4">
+                <div class="contenido">
+                    <div class="contenido-profile">
+                        <img src="https://i.postimg.cc/RF6hWKN5/profile-pic-4.png" alt="Jimena Munoz">
+                    </div>
+                    <div class="contenido-text">
+                        <h3>Jimena Mu&ntilde;oz</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="integrante 5">
+                <div class="contenido">
+                    <div class="contenido-profile">
+                        <img src="https://i.postimg.cc/15ZXzgS2/profile-pic-5.png" alt="Daniel Santana">
+                    </div>
+                    <div class="contenido-text">
+                        <h3>Daniel Santana</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.</p>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </section>
 
@@ -126,6 +127,7 @@
 
         :root {
             --p-black: #1B1D24;
+            --s-black: #56666a;
         }
 
         * {
@@ -232,6 +234,25 @@
         }
 
         /*Teams*/
+        .team {
+            background-color: var(--p-black);
+        }
+
+        .integrante{
+            background-color: var(--s-black);
+            display:flex;
+            width: 28%;
+            border: 1px solid #75949b;
+            border-radius: 15px;
+            }
+        .contenido-text h3{
+            font-size: 24px;
+            padding: 10px 10px 0 10px;;
+        }
+        .contenido-text p{
+            padding: 10px;
+        }
+
 
 
         /*Footer*/
