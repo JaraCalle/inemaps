@@ -115,11 +115,13 @@
         @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
         :root {
-            --p-black: #1B1D24;
-            --s-black: #56666a;
-            --p-gray: #3C4F3B;
-            --p-green: #085a08;
-            --s-green: #308330;
+            --p-white: #e8f1a6;
+            --p-black: #16161c;
+            --s-black: #1e2029;
+            --p-gray: #1f3741;
+            --p-green: #498f45;
+            --s-green: #a3c255;
+            --darker-green: #387450;
         }
 
         * {
@@ -201,7 +203,7 @@
         }
 
         button:hover {
-            box-shadow: 7px 7px 0px rgb(48, 131, 48, 0.8);
+            box-shadow: 7px 7px 0px var(--darker-green);
             top: -5px;
             left: -5px;
         }
@@ -305,7 +307,7 @@
         }
 
         .integrante:hover {
-            box-shadow: 5px 5px 0 rgb(48, 131, 48, 0.8);
+            box-shadow: 7px 7px 0 var(--darker-green);
             top: -5px;
             right: -5px;
         }
