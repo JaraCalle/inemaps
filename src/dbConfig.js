@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const pool = new Pool({
 	user: 'postgres',
 	host: '127.0.0.1',
-	database: 'nodelogin',
+	database: 'inemaps',
 	password: 'pendejo4172286',
 	port: 5432,
 });
