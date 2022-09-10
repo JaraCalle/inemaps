@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+:root {
+    --p-white: #e8f1a6;
+    --p-black: #16161c;
+    --s-black: #1e2029;
+    --p-gray: #1f3741;
+    --p-green: #498f45;
+    --s-green: #a3c255;
+    --darker-green: #387450;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.fa {
+    padding: 2%;
+    font-size: 25px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+    background: var(--s-green);
+    color: white;
+}
+
+li,
+a,
+button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.container-nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: var(--p-black);
+}
+
+.container-logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.container-links {
+    list-style: none;
+}
+
+.container-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.container-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.container-links li a:hover {
+    transition: all 0.3s ease 0s;
+    color: rgb(48, 131, 48, 0.8);
+}
+
+button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: var(--p-green);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    box-shadow: 7px 7px 0px var(--darker-green);
+    top: -5px;
+    left: -5px;
+}
+
+/*Contenido Principal*/
+.sobre-nosotros {
+    display: flex;
+    background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 40px #0d0d0d;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-text {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    max-width: 70%;
+}
+
+.main-title {
+    font-size: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.simple-text {
+    text-align: justify;
+}
+
+.description-logo {
+    margin: 10%;
+}
+
+#home-logo {
+    width: 150%;
+}
+
+/*Teams*/
+.team {
+    background-color: var(--p-black);
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.team-descripcion {
+    padding: 10px;
+}
+
+.team-descripcion h1 {
+    margin-bottom: 1.1rem;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+
+.c3 {
+    grid-area: c3;
+}
+
+.c4 {
+    grid-area: c4;
+}
+
+.c5 {
+    grid-area: c5;
+}
+
+.integrantes {
+    margin-top: 1.1rem;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "c1 c2 c3 c4 c5";
+    gap: 2%;
+}
+
+.integrante {
+    background-color: var(--p-gray);
+    width: 13rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.5s ease 0s;
+}
+
+.integrante:hover {
+    box-shadow: 7px 7px 0 var(--darker-green);
+    top: -5px;
+    right: -5px;
+}
+
+.integrante img {
+    margin: auto;
+    border-radius: 50%;
+}
+
+.integrante .integrante-contenido {
+    margin-top: 1.1em;
+    background-color: #75949b;
+    padding: 3%;
+    border-radius: 15px;
+}
+
+.integrante .integrante-contenido h3 {
+    margin-bottom: 1.1rem;
+}
+
+/*Footer*/
+footer {
+    background-color: var(--p-black);
+    color: #edf0f1;
+    text-align: center;
+    padding: 15px;
+}
