@@ -1,0 +1,136 @@
+.fa {
+    margin-top: 5px;
+    padding: 2%;
+    font-size: 25px;
+    width: 20px;
+    height: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+    background: var(--s-black);
+    color: white;
+}
+
+/*Contenido Principal*/
+.sobre-nosotros {
+    display: flex;
+    background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 40px #0d0d0d;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-text {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    max-width: 70%;
+}
+
+.main-title {
+    font-size: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.simple-text {
+    text-align: justify;
+}
+
+.description-logo {
+    margin: 10%;
+}
+
+#home-logo {
+    width: 150%;
+}
+
+/*Teams*/
+.team {
+    background-color: var(--p-black);
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.team-descripcion {
+    padding: 10px;
+}
+
+.team-descripcion h1 {
+    margin-bottom: 1.1rem;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+
+.c3 {
+    grid-area: c3;
+}
+
+.c4 {
+    grid-area: c4;
+}
+
+.c5 {
+    grid-area: c5;
+}
+
+.integrantes {
+    margin-top: 1.1rem;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "c1 c2 c3 c4 c5";
+    gap: 2%;
+}
+
+.integrante {
+    background-color: var(--p-green);
+    width: 13rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.5s ease 0s;
+}
+
+.integrante:hover {
+    box-shadow: 7px 7px 0 var(--s-green);
+    top: -5px;
+    right: -5px;
+}
+
+.integrante img {
+    margin: auto;
+    border-radius: 50%;
+}
+
+.integrante .integrante-contenido {
+    margin-top: 1.1em;
+    padding: 3%;
+    border-radius: 15px;
+}
+
+.integrante .integrante-contenido h3 {
+    margin-bottom: 1.1rem;
+}

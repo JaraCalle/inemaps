@@ -1,0 +1,23 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
+    height: 530px;
+}
+
+.login-container {
+    background-color: var(--p-black);
+    width: 30%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.login-text {
+    margin-bottom: 5%;
+}
+
+#login-btn {
+    margin: 5%;
+}
