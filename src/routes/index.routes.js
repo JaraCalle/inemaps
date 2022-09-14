@@ -128,7 +128,7 @@ router.get('/posts/:id', (req, res) => {
 })
 
 router.post('/users/register', async (req, res) => {
-    let { name, email, password, password2 } = req.body;
+    let { id, name, email, password, password2 } = req.body;
     console.log({
         name,
         email,
@@ -168,9 +168,9 @@ router.post('/users/register', async (req, res) => {
                 res.render('register', { req, errors })
             } else {
                 pool.query(
-                    `INSERT INTO users (name,email,password)
-                        VALUES ($1, $2, $3)
-                        RETURNING id, password`, [name, email, hashedPassword], (err, result) => {
+                    `INSERT INTO users (id, name,email,password)
+                        VALUES ($1, $2, $3, $4)
+                        RETURNING id, password`, [id, name, email, hashedPassword], (err, result) => {
                     if (err) {
                         throw err
                     }
