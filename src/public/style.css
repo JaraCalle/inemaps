@@ -56,12 +56,12 @@ button {
 }
 
 .container-links li a {
-    transition: all 0.3s ease 0s;
+    transition: all 0.6s ease 0s;
 }
 
 .container-links li a:hover {
     transition: all 0.3s ease 0s;
-    color: rgb(48, 131, 48, 0.8);
+    color: var(--p-green);
 }
 
 button {
@@ -78,6 +78,31 @@ button:hover {
     box-shadow: 7px 7px 0px var(--s-green);
     top: -5px;
     left: -5px;
+}
+
+
+
+.main-title {
+    font-size: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.simple-text {
+    text-align: justify;
+}
+
+.dark {
+    color: var(--p-black);
+}
+
+span {
+    color: var(--p-green);
+    transition: all 0.8s ease 0s;
+}
+
+span:hover {
+    color: var(--s-green);
+    transition: all 0.4s ease 0s;
 }
 
 /*Footer*/

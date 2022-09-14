@@ -20,7 +20,7 @@
         <nav>
             <ul class="container-links">
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a> </li>
+                    <li><a href="/users/register">Register</a> </li>
                     <% } %>
                         <% if(req.isAuthenticated()) { %>
                             <li><a href="/posts">Publications</a></li>
@@ -56,15 +56,15 @@
             <div class="login-inputs">
                 <form action="/users/login" method="POST">
                     <div>
-                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input class="simple-text dark input-text" type="email" name="email" id="email" placeholder="Email"  size="35" autofocus required>
                     </div>
                     <div>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <input class="simple-text dark input-text" type="password" name="password" id="password" placeholder="Password"  size="35" required>
                     </div>
                     <div>
                         <button type="submit" id="login-btn">Login</button>
                     </div>
-                    <a href="/users/register">U dont have account? Register here</a>
+                    <p>U don't have an accout? <a href="/users/register"><span>Register here</span></a></p>
                 </form>
             </div>
         </div>

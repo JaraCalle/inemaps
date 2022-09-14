@@ -21,3 +21,10 @@ main {
 #login-btn {
     margin: 5%;
 }
+
+.input-text {
+    margin: 1%;
+    padding: 2%;
+    border-radius: 15px;
+    border: 0px;
+}
