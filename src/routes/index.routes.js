@@ -13,6 +13,7 @@ initializePassport(passport)
 
 router.get('/', (req, res) => {
     res.render('index', {req})
+    console.log(req.user)
 })
 
 router.get('/users/register', checkAunthenticated, (req, res) => {
@@ -24,7 +25,7 @@ router.get('/users/login', checkAunthenticated, (req, res) => {
 })
 
 router.get('/users/dashboard', checkNotAunthenticated, (req, res) => {
-    res.render('dashboard', { user: req.user.name })
+    res.render('dashboard', { user: req.user.name, req })
 })
 
 router.get('/users/logout', (req, res, next) => {
@@ -40,6 +41,7 @@ router.get('/users/logout', (req, res, next) => {
 
 router.get('/bloques', (req, res) => {
     res.render('bloques', {req});
+    console.log(req.user)
 })
 
 

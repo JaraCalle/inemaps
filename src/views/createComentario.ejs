@@ -8,26 +8,37 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="../public/style.css">
     <title>Inemaps</title>
 </head>
 
 <body>
-    <div class="container-nav">
+    <section class="container-nav">
         <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
                 alt="Inemaps Logo"></a>
         <nav>
             <ul class="container-links">
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a> </li>
-                    <% } %>
+                    <li><a href="/users/login">Log in</a> </li>
+                <% } %>
                 <% if(req.isAuthenticated()) { %>
                     <li><a href="/posts">Publications</a></li>
                 <% } %>
-                <li><a href="/bloques">Blocks</a></li>
+                    <li><a href="/bloques">Blocks</a></li>
+                <% if(req.isAuthenticated()) { %>
+                    <li>
+                        <a href="#">Profile</a>
+                        <ul class="menu-vertical">
+                            <li><br>Welcome!</li>
+                            <li><a href="/users/dashboard">View my profile</a></li>
+                            <li><a href="/users/logout">Log out</a></li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
-    </div>
+    </section>
 
     <main>
         <form action="/crear/comentario/<%- req.params.id %>" method="POST">
