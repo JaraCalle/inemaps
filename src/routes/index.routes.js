@@ -191,6 +191,12 @@ router.post('/users/login', passport.authenticate('local', {
     failureFlash: true
 }))
 
+
+router.get('/users/logout', (req,res) => {
+    req.logout();
+    res.redirect('/');
+})
+
 function checkAunthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect('/')
