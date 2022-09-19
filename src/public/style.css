@@ -20,6 +20,9 @@
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 
 li,
@@ -39,6 +42,7 @@ button {
     align-items: center;
     padding: 0px 20px;
     background-color: var(--p-black);
+    box-shadow: 0 0 40px #0d0d0d;
 }
 
 .container-logo {
@@ -83,6 +87,7 @@ button:hover {
 
 
 .main-title {
+    text-align: center;
     font-size: 50px;
     margin-bottom: 1.5rem;
 }

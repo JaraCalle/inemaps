@@ -3,7 +3,7 @@ main {
     justify-content: center;
     align-items: center;
     background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
-    height: 530px;
+    background-size: cover;
 }
 
 .login-container {
@@ -27,6 +27,7 @@ main {
     padding: 2%;
     border-radius: 15px;
     border: 0px;
+    width: 65%;
 }
 
 input::-webkit-outer-spin-button,

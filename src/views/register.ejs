@@ -9,6 +9,14 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" href="../public/style.css">
     <link rel="stylesheet" href="../public/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            let height = $(window).height();
+            let allHeights = $('footer').height() + $('.container-nav').height();
+            $('main').height(height - allHeights);
+        })
+    </script>
     <title>Inemaps</title>
 </head>
 
@@ -49,7 +57,7 @@
             <div class="login-input">
                 <form action="/users/register" method="POST">
                     <div>
-                        <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Student code" size="45" required>
+                        <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Student code" required>
                     </div>
                     <div>
                         <input class="simple-text dark input-text" type="text" name="name" id="name" placeholder="Name" size="35" autofocus required>
