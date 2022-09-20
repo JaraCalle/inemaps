@@ -8,7 +8,16 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/blocks.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            let height = $(document).height();
+            let allHeights = $('footer').height() + $('.container-nav').height();
+            $('main').height(height - allHeights);
+        })
+    </script>
     <title>Inemaps</title>
 </head>
 
@@ -39,8 +48,17 @@
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
     </section>
-    <h1>Hi, you're now in the blocks section</h1>
+    <main class="blocks-bg">
+        <div class="blocks-scroll">
+            
+        </div>
+        <div class="blocks-scroll">
+            
+        </div>
     </main>
+    <footer>
+        <h4>Todos los derechos reservados.</h4>
+        <p>Copyright &copy; 2022</p>
+    </footer>
 </body>
-
 </html>

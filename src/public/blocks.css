@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+:root {
+    --p-white: #e8f1a6;
+    --p-black: #1B1D24;
+    --s-black: #333333;
+    --p-gray: #191A19;
+    --s-green: rgb(8, 90, 8, 0.8);
+    --p-green: #1F4C28;
+    --cards-green: rgb(69,146,80);
+    --darker-green: #387450;
+}
+
+.blocks-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
+    background-size: cover;
+}
+
+.blocks-scroll {
+    display: grid;
+    position: static;
+    overflow: scroll;
+    background-color: var(--p-green);
+    height: 50%;
+    width: 20%;
+}
