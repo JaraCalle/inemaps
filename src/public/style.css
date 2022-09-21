@@ -11,6 +11,10 @@
     --darker-green: #387450;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
