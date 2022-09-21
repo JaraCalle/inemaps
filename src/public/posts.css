@@ -1,0 +1,11 @@
+.todo {
+    padding: 3%;
+}
+
+.post {
+    display: grid;
+    justify-content: center;
+    background-color: var(--p-black);
+    margin: 2rem;
+    max-width: max-content;
+}

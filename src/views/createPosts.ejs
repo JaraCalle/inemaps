@@ -42,9 +42,15 @@
 
     <main>
         <form action="/crear/post" method="POST">
-            <input type="text" name="description" placeholder="Description">
-            <input type="text" name="categoria" placeholder="Categoria">
-            <input type="submit" value="Enviar">
+            <input class="dark" type="text" name="description" placeholder="Description">
+            <select class="dark" name="categoria">
+                <option class="dark" value=1 selected>Información</option>
+                <option class="dark" value=2>Eventos</option>
+                <option class="dark" value=3>Quejas</option>
+                <option class="dark" value=4>Dudas</option>
+            </select>
+            <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
+            <input class="dark" type="submit" value="Enviar">
         </form>
 
     </main>

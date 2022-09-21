@@ -62,8 +62,9 @@ router.get('/crear/post', (req, res) => {
 router.post('/crear/post', (req, res) => {
     const { id } = req.user
     const { description, categoria } = req.body
+    console.log(req.body)
     if (req.isAuthenticated()) {
-        pool.query(`INSERT INTO posts(fechapublicacion, descripcion, categoria, codigoestudiante) VALUES ('${date}', '${description}', '${categoria}', ${id})`, (err, results) => {
+        pool.query(`INSERT INTO posts(fechapublicacion, descripcion, idcategoria, codigoestudiante) VALUES ('${date}', '${description}', '${categoria}', ${id})`, (err, results) => {
             if (err) {
                 throw err
             }

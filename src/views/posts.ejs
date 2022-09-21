@@ -8,12 +8,22 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/posts.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/358a319a89.js" crossorigin="anonymous"></script>
+    <script src="../public/js/topButton.js"></script>
+    <script>
+        $(function() {
+            let height = $(document).height();
+            let allHeights = $('footer').height() + $('.container-nav').height();
+            $('main').height(height - allHeights);
+        })
+    </script>
     <title>Inemaps</title>
 </head>
 
 <body>
-    <section class="container-nav">
+    <header class="container-nav">
         <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
                 alt="Inemaps Logo"></a>
         <nav>
@@ -38,93 +48,39 @@
             </ul>
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
-    </section>
-    <main>
-        <ul>
-            <% if(messages.succes_msg) {%>
-                <li><%= messages.succes_msg%></li>
-            <% } %>
-        </ul>
-        
+    </header>
+    <main class="main-background todo">
+        <div class="posts-description">
+            <h1 class="main-title">
+                Welcome to the posts section
+            </h1>
+            <ul>
+                <% if(messages.succes_msg) {%>
+                    <li><%= messages.succes_msg%></li>
+                <% } %>
+            </ul>
+        </div>
+
         <% for(var i = 0; i < results.rowCount; i++) {%>
-            <p> <%= results.rows[i].idpost %> </p>
-            <p> <%= results.rows[i].fechapublicacion %> </p>
-            <p> <%= results.rows[i].descripcion %> </p>
-            <p> <%= results.rows[i].categoria %> </p>
-            <p> <%= results.rows[i].codigoestudiante %> </p>
-            <a href="/posts/<%- results.rows[i].idpost %> ">VER POST</a>
-            <hr>
+            <div class="post">
+                <h3 class="main-tilte">
+                    <p> <%= results.rows[i].descripcion %> </p>
+                </h3>
+                <div class="post-content">
+                    <p> <%= results.rows[i].idpost %> </p>
+                    <p> <%= results.rows[i].fechapublicacion %> </p>
+                    <p> <%= results.rows[i].idcategoria %> </p>
+                    <p> <%= results.rows[i].codigoestudiante %> </p>
+                    <a href="/posts/<%- results.rows[i].idpost %> ">VER POST</a>
+                </div>
+            </div>
         <% } %>
     </main>
 
-
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
-        :root {
-            --p-black: #1B1D24;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-        }
-
-        li, a, button {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #edf0f1;
-            text-decoration: none;
-        }
-
-        .container-nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0px 20px;
-            background-color: var(--p-black);
-        }
-
-        .container-logo {
-            cursor: pointer;
-            margin-right: auto;
-        }
-
-        .container-links {
-            list-style: none;
-        }
-
-        .container-links li {
-            display: inline-block;
-            padding: 0px 20px;
-        }
-
-        .container-links li a {
-            transition: all 0.3s ease 0s;
-        }
-
-        .container-links li a:hover {
-            transition: all 0.3s ease 0s;
-            color: rgb(48, 131, 48,0.8);
-        }
-
-        button {
-            margin-left: 20px;
-            padding: 9px 25px;
-            background-color: #085a08;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        button:hover {
-            box-shadow: 7px 7px 0px rgb(48, 131, 48,0.8);
-            top: -5px;
-            left: -5px;
-        }
-    </style>
+    <footer>
+        <h4>Todos los derechos reservados.</h4>
+        <p>Copyright &copy; 2022</p>
+    </footer>
 </body>
 
 </html>

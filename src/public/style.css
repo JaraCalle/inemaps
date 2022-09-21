@@ -89,11 +89,17 @@ button:hover {
 .main-title {
     text-align: center;
     font-size: 50px;
-    margin-bottom: 1.5rem;
 }
 
 .simple-text {
     text-align: justify;
+}
+
+
+.main-background {
+    background: url(https://i.postimg.cc/XvyCK2rn/Background-web.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 40px #0d0d0d;
 }
 
 .dark {
