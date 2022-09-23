@@ -50,8 +50,15 @@ router.get('/posts', (req, res) => {
         if (err) {
             throw err
         }
+        pool.query('SELECT * FROM categoria ', (err, resu) => {
+            if (err) {
+                throw err
+            }
+            res.render('posts', {req, results, resu})
+            console.log(resu.rows )
+        })
         //console.log(results.rows)
-        res.render('posts', {req, results})
+        
     })
 })
 

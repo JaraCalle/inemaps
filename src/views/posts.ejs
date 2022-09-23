@@ -69,8 +69,16 @@
                 <div class="post-content">
                     <p> <%= results.rows[i].idpost %> </p>
                     <p> <%= results.rows[i].fechapublicacion %> </p>
-                    <p> <%= results.rows[i].idcategoria %> </p>
+
+                    <% for(var j = 0; j < resu.rowCount; j++) {%>
+                        <% if(results.rows[i].idcategoria == resu.rows[j].idcategoria) {%>
+                            <p> <%= resu.rows[i].descripcion %> </p>
+                        <%}%>
+                    <%}%>
+
                     <p> <%= results.rows[i].codigoestudiante %> </p>
+                    <p> <%= results.rows[i].idcategoria %> </p>
+                    
                     <a href="/posts/<%- results.rows[i].idpost %> ">VER POST</a>
                 </div>
             </div>
