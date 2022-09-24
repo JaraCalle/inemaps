@@ -62,11 +62,11 @@ router.get('/posts', (req, res) => {
     })
 })
 
-router.get('/crear/post', (req, res) => {
+router.get('/crear/post', checkNotAunthenticated, (req, res) => {
     res.render('createPosts', {req});
 })
 
-router.post('/crear/post', (req, res) => {
+router.post('/crear/post', checkNotAunthenticated, (req, res) => {
     const { id } = req.user
     const { description, categoria } = req.body
     console.log(req.body)
@@ -86,7 +86,7 @@ router.post('/crear/post', (req, res) => {
 
 })
 
-router.get('/crear/comentario/:id', (req,res) => {
+router.get('/crear/comentario/:id', checkNotAunthenticated, (req,res) => {
     if(req.isAuthenticated()){
         
         res.render('createComentario', {req})
@@ -95,7 +95,7 @@ router.get('/crear/comentario/:id', (req,res) => {
     }
 })
 
-router.post('/crear/comentario/:id', (req,res) => {
+router.post('/crear/comentario/:id', checkNotAunthenticated, (req,res) => {
     if(req.isAuthenticated()){
         const {description} = req.body
         const {id} = req.user
