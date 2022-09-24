@@ -126,7 +126,9 @@ router.get('/posts/:id', (req, res) => {
                     } else {
                         if (resu.rowCount > 0) {
                             console.log(resu.rows)
-                            res.render('post', { results, resu, req })
+                            pool.query('SELECT * FROM categoria', (err, resul) => {
+                                res.render('post', { results, resu, req, resul })
+                            })
                         }else {
                             res.render('post', {results, resu:0, req})
                         }

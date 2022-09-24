@@ -47,8 +47,12 @@
         </p>
         <p> descripcion: <%= results.rows[0].descripcion%>
         </p>
-        <p> categoria: <%= results.rows[0].categoria%>
-        </p>
+
+                    <% for(var j = 0; j < resul.rowCount; j++) {%>
+                        <% if(results.rows[0].idcategoria == resul.rows[j].idcategoria) {%>
+                            <p> <%= resul.rows[j].descripcion %> </p>
+                        <%}%>
+                    <%}%>
         <p> codigoestudiante: <%= results.rows[0].codigoestudiante%>
         </p>
 
