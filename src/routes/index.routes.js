@@ -130,7 +130,9 @@ router.get('/posts/:id', (req, res) => {
                                 res.render('post', { results, resu, req, resul })
                             })
                         }else {
-                            res.render('post', {results, resu:0, req})
+                            pool.query('SELECT * FROM categoria', (err, resul) => {
+                                res.render('post', {results, resu:0, req, resul})
+                            })
                         }
                     }
                 })
