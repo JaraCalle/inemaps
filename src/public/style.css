@@ -146,3 +146,47 @@ footer {
 	text-decoration: none;
 	padding: 15px 15px 15px 20px;
 }
+
+
+/*Botón para ir arriba*/
+.go-top-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: var(--s-green);
+    border-radius: 50%;
+    transition: .2s;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.go-top-button i {
+    font-size: 75%;
+    color: white;
+    transition: .2s;
+}
+
+.show {
+    animation: popup .45s ease-in-out;
+    z-index: 1;
+}
+
+@keyframes popup {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    50% {
+        width: 65px;
+        height: 65px;
+    }
+    100% {
+        width: 40px;
+        height: 40px;
+    }
+}
