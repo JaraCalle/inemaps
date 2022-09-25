@@ -7,6 +7,8 @@ const { pool } = require('../dbConfig')
 const bcrypt = require('bcrypt')
 const today = new Date();
 
+const bloquesJS = require('../Bloques');
+
 const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
 initializePassport(passport)
@@ -41,7 +43,8 @@ router.get('/users/logout', (req, res, next) => {
 
 router.get('/bloques', (req, res) => {
     res.render('bloques', {req});
-    console.log(req.user)
+    console.log(req.user);
+    console.log(bloquesJS)
 })
 
 
@@ -68,10 +71,10 @@ router.get('/crear/post', checkNotAunthenticated, (req, res) => {
 
 router.post('/crear/post', checkNotAunthenticated, (req, res) => {
     const { id } = req.user
-    const { description, categoria } = req.body
+    const { titlepost, description, categoria } = req.body
     console.log(req.body)
     if (req.isAuthenticated()) {
-        pool.query(`INSERT INTO posts(fechapublicacion, descripcion, idcategoria, codigoestudiante) VALUES ('${date}', '${description}', '${categoria}', ${id})`, (err, results) => {
+        pool.query(`INSERT INTO posts(titlepost, fechapublicacion, descripcion, idcategoria, codigoestudiante) VALUES ('${titlepost}', '${date}', '${description}', '${categoria}', ${id})`, (err, results) => {
             if (err) {
                 throw err
             }
