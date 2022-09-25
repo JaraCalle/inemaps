@@ -28,6 +28,7 @@ ALTER TABLE IF EXISTS public.users
 CREATE TABLE IF NOT EXISTS public.posts
 (
     idpost serial NOT NULL,
+    titlepost character varying(280) COLLATE pg_catalog."default" NOT NULL,
     fechapublicacion date NOT NULL,
     descripcion character varying(280) COLLATE pg_catalog."default" NOT NULL,
     idcategoria serial NOT NULL,
