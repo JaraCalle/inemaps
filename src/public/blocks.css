@@ -38,14 +38,14 @@
 
 .blocks-section2 {
     height: 35em;
-    width: 25em;
+    width: 24em;
     margin-top: 0.5em;
     background-color: var(--p-green);
     grid-area: section2;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(https://i.postimg.cc/pdt7v4SR/54ab7376e2279224fbbf47cc0eeed5fe.jpg);
+    background: url(https://i.postimg.cc/vmRryQwM/MapaInem.jpg);
     background-size: cover;
 }
 
