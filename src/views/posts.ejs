@@ -9,16 +9,6 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
     <link rel="stylesheet" type="text/css" href="../public/posts.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/358a319a89.js" crossorigin="anonymous"></script>
-    <script src="../public/js/topButton.js"></script>
-    <script>
-        $(function() {
-            let height = $(document).height();
-            let allHeights = $('footer').height() + $('.container-nav').height();
-            $('main').height(height - allHeights);
-        })
-    </script>
     <title>Inemaps</title>
 </head>
 
@@ -30,59 +20,80 @@
             <ul class="container-links">
                 <% if(!req.isAuthenticated()) { %>
                     <li><a href="/users/login">Log in</a> </li>
-                <% } %>
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
-                    <li><a href="/bloques">Blocks</a></li>
-                <% if(req.isAuthenticated()) { %>
-                    <li>
-                        <a href="#">Profile</a>
-                        <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
-                        </ul>
-                    </li>
-                <% } %>
+                    <% } %>
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
+                                <% if(req.isAuthenticated()) { %>
+                                    <li>
+                                        <a href="#">Profile</a>
+                                        <ul class="menu-vertical">
+                                            <li><br>Welcome!</li>
+                                            <li><a href="/users/dashboard">View my profile</a></li>
+                                            <li><a href="/users/logout">Log out</a></li>
+                                        </ul>
+                                    </li>
+                                    <% } %>
             </ul>
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
     </header>
-    <main class="main-background todo">
-        <div class="posts-description">
-            <h1 class="main-title">
-                Welcome to the posts section
-            </h1>
-            <ul>
-                <% if(messages.succes_msg) {%>
-                    <li><%= messages.succes_msg%></li>
-                <% } %>
-            </ul>
-        </div>
 
-        <% for(var i = 0; i < results.rowCount; i++) {%>
-            <div class="post">
-                <h3 class="main-tilte">
-                    <p> <%= results.rows[i].descripcion %> </p>
-                </h3>
-                <div class="post-content">
-                    <p> <%= results.rows[i].idpost %> </p>
-                    <p> <%= results.rows[i].fechapublicacion %> </p>
-
-                    <% for(var j = 0; j < resu.rowCount; j++) {%>
-                        <% if(results.rows[i].idcategoria == resu.rows[j].idcategoria) {%>
-                            <p> <%= resu.rows[j].descripcion %> </p>
-                        <%}%>
-                    <%}%>
-
-                    <p> <%= results.rows[i].codigoestudiante %> </p>
-                    <p> <%= results.rows[i].idcategoria %> </p>
-                    
-                    <a href="/posts/<%- results.rows[i].idpost %> ">VER POST</a>
-                </div>
+    <main>
+        <div class="main-background bruh">
+            <div class="posts-description">
+                <h1 class="main-title">
+                    Welcome to the posts section
+                </h1>
+                <ul>
+                    <% if(messages.succes_msg) {%>
+                        <li>
+                            <%= messages.succes_msg%>
+                        </li>
+                        <% } %>
+                </ul>
             </div>
-        <% } %>
+
+            <div id="newPostBtn">
+                <button><a href="/crear/post">Make a new post</a></button>
+            </div>
+            <div class="posts">
+
+                <% for(var i=0; i < results.rowCount; i++) {%>
+                    <div class="post">
+                        <h3 class="main-title">
+                            <p>
+                                <%= results.rows[i].descripcion %>
+                            </p>
+                        </h3>
+                        <div class="post-content">
+                            <p>
+                                Post N°<%= results.rows[i].idpost %>
+                            </p>
+                            <p>
+                                Created: <%= results.rows[i].fechapublicacion %>
+                            </p>
+                            <% for(var j=0; j < resu.rowCount; j++) {%>
+                                <% if(results.rows[i].idcategoria==resu.rows[j].idcategoria) {%>
+                                    <p>
+                                        Category: <strong>
+                                            <%= resu.rows[j].descripcion %> - <%= results.rows[i].idcategoria %>
+                                        </strong>
+                                    </p>
+                                    <%}%>
+                                        <%}%>
+
+                                            <p>
+                                                ID Author: <%= results.rows[i].codigoestudiante %>
+                                            </p>
+
+                                            <a href="/posts/<%- results.rows[i].idpost %> "><span>View post</span></a>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
     </main>
 
     <footer>

@@ -1,11 +1,31 @@
-.todo {
-    padding: 3%;
+.bruh {
+    padding: 1.5rem;
+}
+
+.posts-description {
+    margin-bottom: 2rem;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
 }
 
 .post {
-    display: grid;
-    justify-content: center;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 15px;
+    padding: 1.1rem;
     background-color: var(--p-black);
-    margin: 2rem;
-    max-width: max-content;
+    max-width: fit-content;
+}
+
+.post .main-title {
+    font-size: x-large;
+}
+
+#newPostBtn {
+    margin-bottom: 1em;
+    text-align: center;
 }

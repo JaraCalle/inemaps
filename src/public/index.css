@@ -45,7 +45,8 @@
 .team {
     background-color: var(--p-black);
     text-align: center;
-    padding: 40px 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .team-descripcion {
@@ -56,36 +57,16 @@
     margin-bottom: 1.1rem;
 }
 
-.c1 {
-    grid-area: c1;
-}
-
-.c2 {
-    grid-area: c2;
-}
-
-.c3 {
-    grid-area: c3;
-}
-
-.c4 {
-    grid-area: c4;
-}
-
-.c5 {
-    grid-area: c5;
-}
-
 .integrantes {
     margin-top: 1.1rem;
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "c1 c2 c3 c4 c5";
-    gap: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    row-gap: 30px;
 }
 
-.integrante {
+.card {
     background-color: var(--p-green);
     width: 13rem;
     text-align: center;
@@ -94,24 +75,24 @@
     transition: all 0.5s ease 0s;
 }
 
-.integrante:hover {
+.card:hover {
     box-shadow: 7px 7px 0 var(--s-green);
     top: -5px;
     right: -5px;
 }
 
-.integrante img {
+.card img {
     margin: auto;
     border-radius: 50%;
 }
 
-.integrante .integrante-contenido {
+.card .card-contenido {
     margin-top: 1.1em;
     padding: 3%;
     border-radius: 15px;
 }
 
-.integrante .integrante-contenido h3 {
+.card .card-contenido h3 {
     margin-bottom: 1.1rem;
 }
 
