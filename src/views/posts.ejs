@@ -52,19 +52,30 @@
                 <ul>
                     <% if(messages.succes_msg) {%>
                         <li>
-                            <%= messages.succes_msg%>
+                            - <%= messages.succes_msg%> -
                         </li>
                         <% } %>
                 </ul>
             </div>
 
             <div id="newPostBtn">
-                <button><a href="/crear/post">Make a new post</a></button>
+                <a href="/crear/post"><button>Make a new post</button></a>
             </div>
             <div class="posts">
 
                 <% for(var i=0; i < results.rowCount; i++) {%>
-                    <div class="post">
+                    <div class="post hide-category">
+                        <div class="categoria hide-category">
+                            <% for(var j=0; j < resu.rowCount; j++) {%>
+                                <% if(results.rows[i].idcategoria==resu.rows[j].idcategoria) {%>
+                                    <p>
+                                        <strong>
+                                            <%= resu.rows[j].descripcion %>
+                                        </strong>
+                                    </p>
+                                    <%}%>
+                                        <%}%>
+                        </div>
                         <h3 class="main-title">
                             <p>
                                 <%= results.rows[i].titlepost %>
@@ -72,29 +83,15 @@
                         </h3>
                         <div class="post-content">
                             <p>
-                                <%= results.rows[i].descripcion %>
+                                Post N°<%= results.rows[i].idpost %>
                             </p>
                             <p>
-                                Post N°<%= results.rows[i].idpost %>
+                                <%= results.rows[i].descripcion %>
                             </p>
                             <p>
                                 Created: <%= results.rows[i].fechapublicacion %>
                             </p>
-                            <% for(var j=0; j < resu.rowCount; j++) {%>
-                                <% if(results.rows[i].idcategoria==resu.rows[j].idcategoria) {%>
-                                    <p>
-                                        Category: <strong>
-                                            <%= resu.rows[j].descripcion %> - <%= results.rows[i].idcategoria %>
-                                        </strong>
-                                    </p>
-                                    <%}%>
-                                        <%}%>
-
-                                            <p>
-                                                ID Author: <%= results.rows[i].codigoestudiante %>
-                                            </p>
-
-                                            <a href="/posts/<%- results.rows[i].idpost %> "><span>View post</span></a>
+                            <a href="/posts/<%- results.rows[i].idpost %> "><span>View post</span></a>
                         </div>
                     </div>
                     <% } %>
@@ -113,6 +110,7 @@
             <i class="fa-solid fa-chevron-up"></i>
         </div>
     </a>
+    <script src="../public/js/bloques.js"></script>
 </body>
 
 </html>
