@@ -49,7 +49,7 @@ router.get('/bloques', (req, res) => {
 
 
 router.get('/posts', (req, res) => {
-    pool.query('SELECT * FROM posts', (err, results) => {
+    pool.query('SELECT * FROM posts ORDER BY fechapublicacion DESC', (err, results) => {
         if (err) {
             throw err
         }
