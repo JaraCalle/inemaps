@@ -89,16 +89,7 @@ router.post('/crear/post', checkNotAunthenticated, (req, res) => {
 
 })
 
-router.get('/crear/comentario/:id', checkNotAunthenticated, (req,res) => {
-    if(req.isAuthenticated()){
-        
-        res.render('createComentario', {req})
-    }else {
-        res.redirect('/posts/:id')
-    }
-})
-
-router.post('/crear/comentario/:id', checkNotAunthenticated, (req,res) => {
+router.post('/posts/:id', checkNotAunthenticated, (req,res) => {
     if(req.isAuthenticated()){
         const {description} = req.body
         const {id} = req.user

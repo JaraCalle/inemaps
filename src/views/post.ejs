@@ -77,7 +77,11 @@
                 <% } %>
                     <% } %>
 
-                        <a href="/crear/comentario/<%-req.params.id%>"> a </a>
+
+                        <form action="/posts/<%- req.params.id %> " method="POST">
+                            <input type="text" class="dark" name="description" placeholder="Comentar">
+                            <input type="submit" value="Submit">
+                        </form>
 
     </main>
 </body>
