@@ -42,7 +42,7 @@ router.get('/users/logout', (req, res, next) => {
 //BLOQUES Y COMENTARIOS
 
 router.get('/bloques', (req, res) => {
-    res.render('bloques', {req});
+    res.render('bloques', {req, bloquesJS});
     console.log(req.user);
     console.log(bloquesJS)
 })
@@ -53,6 +53,8 @@ router.get('/posts', (req, res) => {
         if (err) {
             throw err
         }
+        
+        
         pool.query('SELECT * FROM categoria ', (err, resu) => {
             if (err) {
                 throw err

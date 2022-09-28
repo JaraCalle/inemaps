@@ -51,6 +51,8 @@
     <main class="blocks-bg main-background">
         <div class="blocks-main">
             <div class="blocks-section1">
+
+                <% for(var i = 0; i < bloquesJS.length; i++){ %>
                     <div class="block-element">
                         <div class="image">
                             <!--
@@ -60,95 +62,19 @@
                                     se puede usar por ejemplo https://postimages.org/
                                 3. Se pueden crear mas espacios para bloque copiando todo desde el div block-element
                             -->
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
+                            <img src="<%= bloquesJS[i].img %>" alt="bloque turituki">
                         </div>
                         <div class="block-descripcion">
                             <div class="title">
-                                <b>Bloque 7A</b>
+                                <b><%= bloquesJS[i].Titulo%></b>
                             </div>
                             <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
+                                <p><%= bloquesJS[i].Descripcion %></p>
                             </div>
                         </div>
                     </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-element">
-                        <div class="image">
-                            <img src="https://i.postimg.cc/fyd3vyhh/P1470500.jpg" alt="bloque turituki">
-                        </div>
-                        <div class="block-descripcion">
-                            <div class="title">
-                                <b>Bloque 7A</b>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>        
+                    <% } %>
+                    
             </div>
             <div class="blocks-section2">
                 
