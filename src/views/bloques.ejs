@@ -51,17 +51,10 @@
     <main class="blocks-bg main-background">
         <div class="blocks-main">
             <div class="blocks-section1">
-
+                
                 <% for(var i = 0; i < bloquesJS.length; i++){ %>
-                    <div class="block-element">
+                    <div class="block-element" id="<% bloquesJS[i].id %>">
                         <div class="image">
-                            <!--
-                                1. El tamaño de las fotografias del zip deben ser cambiadas a 200px x 134px
-                                    se puede usar por ejemplo https://www.iloveimg.com/es/redimensionar-imagen/jpg-cambiar-tamano#resize-options,pixels
-                                2. Las fotos deben subirse a un almacen de imagenes remoto
-                                    se puede usar por ejemplo https://postimages.org/
-                                3. Se pueden crear mas espacios para bloque copiando todo desde el div block-element
-                            -->
                             <img src="<%= bloquesJS[i].img %>" alt="bloque turituki">
                         </div>
                         <div class="block-descripcion">
