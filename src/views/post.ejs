@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <link rel="stylesheet" href="../public/post.css">
     <title>Inemaps</title>
 </head>
 
@@ -19,70 +20,71 @@
             <ul class="container-links">
                 <% if(!req.isAuthenticated()) { %>
                     <li><a href="/users/login">Log in</a> </li>
-                <% } %>
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
-                    <li><a href="/bloques">Blocks</a></li>
-                <% if(req.isAuthenticated()) { %>
-                    <li>
-                        <a href="#">Profile</a>
-                        <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
-                        </ul>
-                    </li>
-                <% } %>
+                    <% } %>
+                        <% if(req.isAuthenticated()) { %>
+                            <li><a href="/posts">Publications</a></li>
+                            <% } %>
+                                <li><a href="/bloques">Blocks</a></li>
+                                <% if(req.isAuthenticated()) { %>
+                                    <li>
+                                        <a href="#">Profile</a>
+                                        <ul class="menu-vertical">
+                                            <li><br>Welcome!</li>
+                                            <li><a href="/users/dashboard">View my profile</a></li>
+                                            <li><a href="/users/logout">Log out</a></li>
+                                        </ul>
+                                    </li>
+                                    <% } %>
             </ul>
         </nav>
         <a href="/"><button id="nav-btn">Home</button></a>
     </section>
-    
-    <main style="background-color: blue;">
-        <a href="/posts"><button>Go back</button></a>
-        <p> ID: <%= results.rows[0].idpost %>
-        </p>
-        <p> fechapublicacion: <%= results.rows[0].fechapublicacion %>
-        </p>
-        <p> descripcion: <%= results.rows[0].descripcion%>
-        </p>
 
-                    <% for(var j = 0; j < resul.rowCount; j++) {%>
-                        <% if(results.rows[0].idcategoria == resul.rows[j].idcategoria) {%>
-                            <p> <%= resul.rows[j].descripcion %> </p>
+    <main>
+        <div class="main-background hola">
+            <a href="/posts"><button>Go back</button></a>
+            <div class="post">
+                <h2 class="main-title">
+                    <%= results.rows[0].titlepost%>
+                </h2>
+                <div class="post-content">
+                    <p>ID: <%= results.rows[0].idpost %></p>
+                    <p>ID Author: <%= results.rows[0].codigoestudiante%></p>
+                    <p>fechapublicacion: <%= results.rows[0].fechapublicacion %></p>
+                    <p>descripcion: <%= results.rows[0].descripcion%></p>
+                    <% for(var j=0; j < resul.rowCount; j++) {%>
+                        <% if(results.rows[0].idcategoria==resul.rows[j].idcategoria) {%>
+                            <p>
+                                <%= resul.rows[j].descripcion %>
+                            </p>
                         <%}%>
                     <%}%>
-                    
-        <p> codigoestudiante: <%= results.rows[0].codigoestudiante%>
-        </p>
+                </div>
+            </div>
 
-        <hr>
-
-        <% if(!resu==0) {%>
-            <h4>COMENTARIOS DEL POST</h4>
-
-            <% for(var i=0; i < resu.rowCount; i++) { %>
-                <p> idcomentario = <%= resu.rows[i].idcomentario %>
-                </p>
-                <p> descripcion = <%= resu.rows[i].descripcion %>
-                </p>
-                <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %>
-                </p>
-                <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %>
-                </p>
-                <p> idpost = <%= resu.rows[i].idpost %>
-                </p>
-                <hr>
-                <% } %>
+            <div class="comentarios">
+                <form action="/posts/<%- req.params.id %> " method="POST">
+                    <input type="text" class="dark" name="description" placeholder="Comentar">
+                    <input type="submit" value="Submit">
+                </form>
+                <% if(!resu==0) {%>
+                    <h4>COMENTARIOS DEL POST</h4>
+                    <% for(var i=0; i < resu.rowCount; i++) { %>
+                        <p> idcomentario = <%= resu.rows[i].idcomentario %></p>
+                        <p> descripcion = <%= resu.rows[i].descripcion %></p>
+                        <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %></p>
+                        <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %></p>
+                        <p> idpost = <%= resu.rows[i].idpost %></p>
+                        <hr>
                     <% } %>
+                <% } %>
+            </div>
+        </div>
 
-
-                        <form action="/posts/<%- req.params.id %> " method="POST">
-                            <input type="text" class="dark" name="description" placeholder="Comentar">
-                            <input type="submit" value="Submit">
-                        </form>
-
+        <footer>
+            <h4>Todos los derechos reservados.</h4>
+            <p>Copyright &copy; 2022</p>
+        </footer>
     </main>
 </body>
 

@@ -2,6 +2,15 @@
     padding: 2rem;
 }
 
+.posts-description {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.posts-description ul li {
+    color: var(--lighter-green);
+}
+
 #newPostBtn {
     margin-bottom: 2em;
     text-align: center;
@@ -14,22 +23,15 @@
     row-gap: 30px;
 }
 
-.posts-description {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.posts-description ul li {
-    color: var(--lighter-green);
-}
-
 .post {
     position: relative;
     box-shadow: 0px 0px 5px black;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 1.1rem;
     background-color: var(--p-black);
     max-width: 30em;
+    min-height: 10vh;
+    word-wrap: break-word;
 }
 
 .post .categoria {
@@ -59,6 +61,7 @@
 
 .post-content p:nth-child(2) {
     opacity: .7;
+    overflow: auto;
 }
 
 .post-content a {
