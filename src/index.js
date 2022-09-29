@@ -8,6 +8,7 @@ const passport = require('passport');
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
+const {format} = require('timeago.js')
 
 const initializePassport = require('./passportConfig');
 
@@ -25,6 +26,11 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use((req,res,next) => {
+    app.locals.format = format
+    next();
+})
 
 app.use(passport.initialize());
 app.use(passport.session());

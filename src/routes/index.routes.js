@@ -53,13 +53,30 @@ router.get('/posts', (req, res) => {
             throw err
         }
         
-        
         pool.query('SELECT * FROM categoria ', (err, resu) => {
             if (err) {
                 throw err
             }
-            res.render('posts', {req, results, resu})
-            console.log(resu.rows )
+
+            //console.log(resu.rows)
+
+            pool.query('SELECT * FROM users', (err, resul) => {
+                if(err){
+                    throw err
+                }
+
+                for(var i = 0; i < results.rows.length; i++)
+                {
+                    var splitFecha = results.rows[i].fechapublicacion;
+                    var esto = splitFecha.toString()
+                    var splitjaja = esto.split(" ") + splitjaja;
+                }
+
+
+                res.render('posts', {req, results, resu, resul, splitjaja})
+
+            })
+
         })
         //console.log(results.rows)
         
