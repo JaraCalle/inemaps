@@ -42,18 +42,21 @@
 
     <main>
         <button><a href="/posts">Go back</a></button>
-        <form action="/crear/post" method="POST">
-            <input class="dark" type="text" name="titlepost" placeholder="Titulo" required>
-            <input class="dark" type="text" name="description" placeholder="Description" required>
-            <select class="dark" name="categoria">
-                <option class="dark" value=1 selected>Información</option>
-                <option class="dark" value=2>Eventos</option>
-                <option class="dark" value=3>Quejas</option>
-                <option class="dark" value=4>Dudas</option>
-            </select>
-            <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
-            <input class="dark" type="submit" value="Enviar">
-        </form>
+        <div class="main-background bruh">
+
+            <form action="/crear/post" method="POST">
+                <input class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus>
+                <input class="dark" type="text" name="description" placeholder="Description" required>
+                <select class="dark" name="categoria">
+                    <option class="dark" value=1 selected>Información</option>
+                    <option class="dark" value=2>Eventos</option>
+                    <option class="dark" value=3>Quejas</option>
+                    <option class="dark" value=4>Dudas</option>
+                </select>
+                <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
+                <input class="dark" type="submit" value="Enviar">
+            </form>
+        </div>
 
     </main>
 </body>

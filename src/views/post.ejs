@@ -44,14 +44,16 @@
         <div class="main-background hola">
             <a href="/posts"><button>Go back</button></a>
             <div class="post">
-                <h2 class="main-title">
-                    <%= results.rows[0].titlepost%>
-                </h2>
-                <div class="post-content">
-                    <p>ID: <%= results.rows[0].idpost %></p>
+                <div class="nose">
+                    <h2 class="main-title">
+                        <%= results.rows[0].titlepost%>
+                    </h2>
                     <p>ID Author: <%= results.rows[0].codigoestudiante%></p>
+                </div>
+                <div class="post-content">
+                    <p><%= results.rows[0].descripcion%></p>
+                    <p>ID: <%= results.rows[0].idpost %></p>
                     <p>fechapublicacion: <%= results.rows[0].fechapublicacion %></p>
-                    <p>descripcion: <%= results.rows[0].descripcion%></p>
                     <% for(var j=0; j < resul.rowCount; j++) {%>
                         <% if(results.rows[0].idcategoria==resul.rows[j].idcategoria) {%>
                             <p>
@@ -75,7 +77,6 @@
                         <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %></p>
                         <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %></p>
                         <p> idpost = <%= resu.rows[i].idpost %></p>
-                        <hr>
                     <% } %>
                 <% } %>
             </div>

@@ -1,6 +1,6 @@
 .hola {
     padding: 2rem;
-    height: 70vh;
+    height: 80vh;
 }
 
 .post {
@@ -11,6 +11,19 @@
     padding: 1.1rem;
 }
 
+.nose {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
 .post .main-title {
     text-align: start;
+}
+
+
+.post-content p:first-child {
+    opacity: .8;
 }

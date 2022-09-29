@@ -109,6 +109,12 @@ button:hover {
     background-repeat: repeat;
 }
 
+.bruh {
+    padding: 2rem;
+}
+
+
+
 .dark {
     color: var(--p-black);
 }
