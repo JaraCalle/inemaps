@@ -44,7 +44,6 @@ router.get('/users/logout', (req, res, next) => {
 router.get('/bloques', (req, res) => {
     res.render('bloques', {req, bloquesJS});
     console.log(req.user);
-    console.log(bloquesJS)
 })
 
 
