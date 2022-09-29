@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
     <link rel="stylesheet" type="text/css" href="../public/blocks.css">
+    <link rel="stylesheet" type="text/css" href="../public/posts.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -53,7 +54,7 @@
             <div class="blocks-section1">
                 
                 <% for(var i = 0; i < bloquesJS.length; i++){ %>
-                    <div class="block-element" id=" <%= bloquesJS[i].id %> ">
+                    <div class="block-element hide-category" id=" <%= bloquesJS[i].id %> ">
                         <div class="image">
                             <img src="<%= bloquesJS[i].img %>" alt="bloque turituki">
                         </div>
@@ -69,7 +70,7 @@
                     <% } %>
                     
             </div>
-            <div class="blocks-section2">
+            <div class="blocks-section2 hide-category">
                 
             </div>
         </div>
@@ -78,5 +79,6 @@
         <h4>Todos los derechos reservados.</h4>
         <p>Copyright &copy; 2022</p>
     </footer>
+    <script src="../public/js/bloques.js"></script>
 </body>
 </html>

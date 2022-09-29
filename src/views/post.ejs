@@ -44,16 +44,16 @@
         <div class="main-background hola">
             <a href="/posts"><button>Go back</button></a>
             <div class="post">
+                <p>Post N°<%= results.rows[0].idpost %></p>
                 <div class="nose">
                     <h2 class="main-title">
                         <%= results.rows[0].titlepost%>
                     </h2>
-                    <p>ID Author: <%= results.rows[0].codigoestudiante%></p>
+                    <p><%= format(results.rows[0].fechapublicacion) %></p>
                 </div>
                 <div class="post-content">
                     <p><%= results.rows[0].descripcion%></p>
-                    <p>ID: <%= results.rows[0].idpost %></p>
-                    <p>fechapublicacion: <%= results.rows[0].fechapublicacion %></p>
+                    <p>ID Author: <%= results.rows[0].codigoestudiante%></p>
                     <% for(var j=0; j < resul.rowCount; j++) {%>
                         <% if(results.rows[0].idcategoria==resul.rows[j].idcategoria) {%>
                             <p>
