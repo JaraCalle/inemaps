@@ -3,13 +3,13 @@ module.exports = [
         id: 1,
         img: 'https://i.postimg.cc/gkfB5nDL/bloque1.jpg',
         Titulo: 'Bloque 1',
-        Descripcion: 'orem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit'
+        Descripcion: 'Science department block. Inside it are the laboratories and the science teachers rooms.'
     },
     {
         id: 2,
         img: 'https://i.postimg.cc/Y0KYwGXj/Bloque2.jpg',
         Titulo: 'Bloque 2',
-        Descripcion: 'orem ipsum dolor sit amet consectetur adipisicing elit. Atque totam, omnis natus sed praesentium dolor. Lorem ipsum dolor sit'
+        Descripcion: 'Arts department block. On the first floor of this are the music rooms and on the second floor are the kitchens.'
     },
     {
         id: 3,
