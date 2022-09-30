@@ -37,13 +37,13 @@
 .blocks-section2 {
     height: 35em;
     width: 24em;
-    margin-top: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     background-color: var(--p-green);
     grid-area: section2;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(https://i.postimg.cc/vmRryQwM/MapaInem.jpg);
     background-size: cover;
 }
 
