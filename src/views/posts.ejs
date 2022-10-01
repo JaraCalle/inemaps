@@ -69,7 +69,6 @@
                 <% for(var i=0; i < results.rowCount; i++) {%>
                     <div class="post hide-category">
                         <div class="categoria hide-category">
-
                             <% for(var j=0; j < resu.rowCount; j++) {%>
                                 <% if(results.rows[i].idcategoria==resu.rows[j].idcategoria) {%>
                                     <p>
@@ -77,8 +76,8 @@
                                             <%= resu.rows[j].descripcion %>
                                         </strong>
                                     </p>
-                                    <%}%>
-                                        <%}%>
+                                <%}%>
+                            <%}%>
                         </div>
                         <h3 class="main-title">
                             <p>
@@ -86,18 +85,15 @@
                             </p>
                         </h3>
                         <div class="post-content">
-
                             <% for(var k=0; k < resul.rowCount; k++) {%>
                                 <% if(results.rows[i].codigoestudiante == resul.rows[k].id) {%>
                                     <p>
                                         <strong>
                                             <%= resul.rows[k].name %>
                                         </strong>
-                                        
                                     </p>
                                 <%}%>
                             <%}%>
-
                             <p>
                                 <%= results.rows[i].descripcion %>
                             </p>

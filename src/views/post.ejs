@@ -18,29 +18,29 @@
         <nav>
             <ul class="container-links">
                 <li><a href="/bloques">Blocks</a></li>
-                
+
                 <% if(req.isAuthenticated()) { %>
                     <li><a href="/posts">Publications</a></li>
-                <% } %>
+                    <% } %>
 
-                <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Log in</a> </li>
-                <% } %>
-                
-                <% if(req.isAuthenticated()) { %>
-                    <li>
-                        <a href="">Profile</a>
-                        <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
-                        </ul>
-                    </li>
-                <% } %>
+                        <% if(!req.isAuthenticated()) { %>
+                            <li><a href="/users/login">Log in</a> </li>
+                            <% } %>
+
+                                <% if(req.isAuthenticated()) { %>
+                                    <li>
+                                        <a href="">Profile</a>
+                                        <ul class="menu-vertical">
+                                            <li><br>Welcome!</li>
+                                            <li><a href="/users/dashboard">View my profile</a></li>
+                                            <li><a href="/users/logout">Log out</a></li>
+                                        </ul>
+                                    </li>
+                                    <% } %>
             </ul>
         </nav>
-        <a class="container-logo" href="/"><img id="nav-logo"
-                src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
     </header>
 
     <main>
@@ -50,30 +50,39 @@
                     <a href="/posts"><button>Go back</button></a>
                 </div>
                 <div class="post">
-                    <p>Post N°<%= results.rows[0].idpost %></p>
+                    <p>Post N°<%= results.rows[0].idpost %>
+                    </p>
                     <div class="post-header">
                         <h2 class="main-title">
                             <%= results.rows[0].titlepost%>
                         </h2>
-                        <p><%= format(results.rows[0].fechapublicacion) %></p>
+                        <p>
+                            <%= format(results.rows[0].fechapublicacion) %>
+                        </p>
                     </div>
                     <div class="post-content">
-                        <p><%= results.rows[0].descripcion%></p>
-                        <p>ID Author: <%= results.rows[0].codigoestudiante%></p>
+                        <p>
+                            <%= results.rows[0].descripcion%>
+                        </p>
+                        <p>ID Author: <%= results.rows[0].codigoestudiante%>
+                        </p>
+                        <p>ID Author: <%= results.rows[0].name%>
+                        </p>
                         <% for(var j=0; j < resul.rowCount; j++) {%>
                             <% if(results.rows[0].idcategoria==resul.rows[j].idcategoria) {%>
                                 <p>
                                     <%= resul.rows[j].descripcion %>
                                 </p>
-                            <%}%>
-                        <%}%>
+                                <%}%>
+                                    <%}%>
                     </div>
                 </div>
             </div>
-            <div class="comentarios">
+            <div class="container-comentarios-form">
                 <div class="comentarios-form">
                     <form action="/posts/<%- req.params.id %> " method="POST">
-                        <textarea class="dark" type="text" name="description" placeholder="Write something..." required></textarea>
+                        <textarea class="dark" type="text" name="description" placeholder="Write something..."
+                            required></textarea>
                         <!-- <input type="text" class="dark" name="description" placeholder="Comment"> -->
                         <div id="commentBtn">
                             <button type="submit">Comment</button>
@@ -81,20 +90,29 @@
                         <!-- <input type="submit" value="Submit"> -->
                     </form>
                 </div>
-                <% if(!resu==0) {%>
-                    <h4>COMENTARIOS DEL POST</h4>
-                    <% for(var i=0; i < resu.rowCount; i++) { %>
-                        <p> idcomentario = <%= resu.rows[i].idcomentario %></p>
-                        <p> descripcion = <%= resu.rows[i].descripcion %></p>
-                        <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %></p>
-                        <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %></p>
-                        <p> idpost = <%= resu.rows[i].idpost %></p>
-                    <% } %>
-                <% } %>
             </div>
-
+            <div class="comentarios">
+                <h4 class="main-title">
+                    Comments
+                </h4>
+                <% if(resu==0) {%>
+                    <p>There's no comments yet, would you like to be the first?</p>
+                    <% } else { %>
+                        <% for(var i=0; i < resu.rowCount; i++) { %>
+                            <p> idcomentario = <%= resu.rows[i].idcomentario %>
+                            </p>
+                            <p> descripcion = <%= resu.rows[i].descripcion %>
+                            </p>
+                            <p> fechapublicacion = <%= resu.rows[i].fechapublicacion %>
+                            </p>
+                            <p> codigoestudiante = <%= resu.rows[i].codigoestudiante %>
+                            </p>
+                            <p> idpost = <%= resu.rows[i].idpost %>
+                            </p>
+                            <% } %>
+                                <% } %>
+            </div>
         </div>
-
         <footer>
             <h4>Todos los derechos reservados.</h4>
             <p>Copyright &copy; 2022</p>
