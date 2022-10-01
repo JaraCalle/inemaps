@@ -21,61 +21,76 @@
 </head>
 
 <body>
-    <div class="container-nav">
-        <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
-                alt="Inemaps Logo"></a>
+    <header class="container-nav">
+        <a href="/"><button id="nav-btn">Home</button></a>
         <nav>
             <ul class="container-links">
-                <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Login</a> </li>
-                    <% } %>
+                <li><a href="/bloques">Blocks</a></li>
+                
                 <% if(req.isAuthenticated()) { %>
                     <li><a href="/posts">Publications</a></li>
                 <% } %>
-                <li><a href="/bloques">Blocks</a></li>
+
+                <% if(!req.isAuthenticated()) { %>
+                    <li><a href="/users/login">Log in</a> </li>
+                <% } %>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li>
+                        <a href="">Profile</a>
+                        <ul class="menu-vertical">
+                            <li><br>Welcome!</li>
+                            <li><a href="/users/dashboard">View my profile</a></li>
+                            <li><a href="/users/logout">Log out</a></li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
         </nav>
-        <a href="/"><button id="nav-btn">Home</button></a>
-    </div>
+        <a class="container-logo" href="/"><img id="nav-logo"
+                src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+    </header>
     
     <main>
-        <div class="login-container">
-            <div class="login-text">
-                <h1>Register</h1>
-        
-                <ul>
-                    <% if(typeof errors !='undefined' ) { %>
-                        <% errors.forEach(error=> { %>
-                            <li>
-                                <%= error.message %>
-                            </li>
-                            <% }) %>
-                                <% } %>
-                </ul>
-            </div>
-
-            <div class="login-input">
-                <form action="/users/register" method="POST">
-                    <div>
-                        <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Student code" required>
-                    </div>
-                    <div>
-                        <input class="simple-text dark input-text" type="text" name="name" id="name" placeholder="Name" size="35" autofocus required>
-                    </div>
-                    <div>
-                        <input class="simple-text dark input-text" type="email" name="email" id="email" placeholder="Email" size="35" required>
-                    </div>
-                    <div>
-                        <input class="simple-text dark input-text" type="password" name="password" id="password" placeholder="Password" size="35" required>
-                    </div>
-                    <div>
-                        <input class="simple-text dark input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" size="35" required>
-                    </div>
-                    <div>
-                        <button type="submit" id="login-btn">Register</button>
-                    </div>
-                    <p>Already registered? <a href="/users/login"><span>Login here</span></a></p>
-                </form>
+        <div class="main-background minimum-sizes all">
+            <div class="login-container">
+                <div class="login-text">
+                    <h1>Register</h1>
+            
+                    <ul>
+                        <% if(typeof errors !='undefined' ) { %>
+                            <% errors.forEach(error=> { %>
+                                <li>
+                                    <%= error.message %>
+                                </li>
+                                <% }) %>
+                                    <% } %>
+                    </ul>
+                </div>
+    
+                <div class="login-input">
+                    <form action="/users/register" method="POST">
+                        <div>
+                            <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Student code" required>
+                        </div>
+                        <div>
+                            <input class="simple-text dark input-text" type="text" name="name" id="name" placeholder="Name" size="35" autofocus required>
+                        </div>
+                        <div>
+                            <input class="simple-text dark input-text" type="email" name="email" id="email" placeholder="Email" size="35" required>
+                        </div>
+                        <div>
+                            <input class="simple-text dark input-text" type="password" name="password" id="password" placeholder="Password" size="35" required>
+                        </div>
+                        <div>
+                            <input class="simple-text dark input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" size="35" required>
+                        </div>
+                        <div>
+                            <button type="submit" id="login-btn">Register</button>
+                        </div>
+                        <p>Already registered? <a href="/users/login"><span>Login here</span></a></p>
+                    </form>
+                </div>
             </div>
         </div>
     </main>

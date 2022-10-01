@@ -10,73 +10,82 @@
     <link rel="stylesheet" href="../public/style.css" />
     <link rel="stylesheet" href="../public/login.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function() {
-            let height = $(document).height();
-            let allHeights = $('footer').height() + $('.container-nav').height();
-            $('main').height(height - allHeights);
-        })
-    </script>
     <title>Inemaps</title>
 </head>
 
 <body>
-    <div class="container-nav">
-        <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
-                alt="Inemaps Logo" /></a>
+    <header class="container-nav">
+        <a href="/"><button id="nav-btn">Home</button></a>
         <nav>
             <ul class="container-links">
+                <li><a href="/bloques">Blocks</a></li>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li><a href="/posts">Publications</a></li>
+                <% } %>
+
                 <% if(!req.isAuthenticated()) { %>
                     <li><a href="/users/register">Register</a></li>
-                    <% } %>
-                        <% if(req.isAuthenticated()) { %>
-                            <li><a href="/posts">Publications</a></li>
-                            <% } %>
-                                <li><a href="/bloques">Blocks</a></li>
+                <% } %>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li>
+                        <a href="">Profile</a>
+                        <ul class="menu-vertical">
+                            <li><br>Welcome!</li>
+                            <li><a href="/users/dashboard">View my profile</a></li>
+                            <li><a href="/users/logout">Log out</a></li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
         </nav>
-        <a href="/"><button id="nav-btn">Home</button></a>
-    </div>
+        <a class="container-logo" href="/"><img id="nav-logo"
+                src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+    </header>
 
-    <main id="div2">
-        <div class="login-container">
-            <div class="login-text">
-                <h1>Log in</h1>
+    <main>
+        <div class="main-background minimum-sizes all">
+            <div class="login-container">
+                <div class="login-text">
+                    <h1>Log in</h1>
+    
+                    <ul>
+                        <% if(messages.succes_msg) {%>
+                            <li>
+                                <%= messages.succes_msg%>
+                            </li>
+                            <% } %>
+                    </ul>
+    
+                    <ul>
+                        <% if(messages.error) {%>
+                            <li>
+                                <%= messages.error%>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
 
-                <ul>
-                    <% if(messages.succes_msg) {%>
-                        <li>
-                            <%= messages.succes_msg%>
-                        </li>
-                        <% } %>
-                </ul>
-
-                <ul>
-                    <% if(messages.error) {%>
-                        <li>
-                            <%= messages.error%>
-                        </li>
-                        <% } %>
-                </ul>
-            </div>
-            <div class="login-inputs">
-                <form action="/users/login" method="POST">
-                    <div>
-                        <input class="simple-text dark input-text" type="email" name="email" id="email"
-                                placeholder="Email" autofocus required />
-                    </div>
-                    <div>
-                        <input class="simple-text dark input-text" type="password" name="password" id="password"
-                            placeholder="Password" required />
-                    </div>
-                    <div>
-                        <button type="submit" id="login-btn">Login</button>
-                    </div>
-                    <p>
-                        U don't have an account?
-                        <a href="/users/register"><span>Register here</span></a>
-                    </p>
-                </form>
+                <div class="login-inputs">
+                    <form action="/users/login" method="POST">
+                        <div>
+                            <input class="simple-text dark input-text" type="email" name="email" id="email"
+                                    placeholder="Email" autofocus required />
+                        </div>
+                        <div>
+                            <input class="simple-text dark input-text" type="password" name="password" id="password"
+                                placeholder="Password" required />
+                        </div>
+                        <div>
+                            <button type="submit" id="login-btn">Login</button>
+                        </div>
+                        <p>
+                            U don't have an account?
+                            <a href="/users/register"><span>Register here</span></a>
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
     </main>

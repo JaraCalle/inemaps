@@ -30,7 +30,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 li,
 a,
 button {
@@ -44,9 +43,8 @@ button {
     position: sticky;
     top: 0;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 2vw;
     background-color: var(--p-black);
     box-shadow: 0 0 40px #0d0d0d;
     z-index: 111;
@@ -54,7 +52,7 @@ button {
 
 .container-logo {
     cursor: pointer;
-    margin-right: auto;
+    margin-left: auto;
 }
 
 .container-links {
@@ -62,7 +60,7 @@ button {
 }
 
 .container-links li {
-    display: inline-block;
+    display:inline-block;
     padding: 0px 20px;
 }
 
@@ -76,7 +74,6 @@ button {
 }
 
 button {
-    margin-left: 20px;
     padding: 9px 25px;
     background-color: var(--p-green);
     border: none;
@@ -91,7 +88,20 @@ button:hover {
     left: -5px;
 }
 
+.all {
+    display: flex;
+    flex-flow: column;
+    align-items:center;
+    row-gap: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 
+.all-content {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 20px;
+}
 
 .main-title {
     text-align: center;
@@ -102,18 +112,16 @@ button:hover {
     text-align: justify;
 }
 
-
 .main-background {
     background: url(https://i.postimg.cc/FHZWWQQT/Background-web-main.jpg);
     box-shadow: inset 0 0 40px #0d0d0d;
     background-repeat: repeat;
 }
 
-.bruh {
-    padding: 2rem;
+.minimum-sizes {
+    min-height: 85vh;
+    min-width: 100vw;
 }
-
-
 
 .dark {
     color: var(--p-black);
@@ -138,6 +146,10 @@ footer {
 }
 
 /*Submenu*/
+#profile-link {
+    cursor: default;
+}
+
 .menu-vertical{
 	position: absolute;
 	display: none;

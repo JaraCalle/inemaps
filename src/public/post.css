@@ -1,20 +1,14 @@
-.hola {
-    padding: 2rem;
-    min-height: 80vh;
-}
-
 .post {
     background-color: var(--p-black);
     border-radius: 20px;
-    margin: 1.5rem auto;
     box-shadow: 0px 0px 5px black;
     padding: 1.1rem;
     height: auto;
+    width: 80vw;
     word-wrap: break-word;
 }
 
-.nose {
-    margin-top: 20px;
+.post-header {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -22,7 +16,7 @@
     justify-content: space-between;
 }
 
-.nose .main-title {
+.post-header .main-title {
     overflow: auto;
 }
 
@@ -33,4 +27,26 @@
 
 .post-content p:first-child {
     opacity: .8;
+}
+
+.comentarios-form form{
+    display: flex;  
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 1em;
+}
+
+.comentarios-form form textarea {
+    border-radius: 20px;
+    border: 0px;
+    padding: 12px 20px;
+    resize: none;
+    min-width: 40vw;
+    height: auto;
+    box-shadow: 0px 0px 5px black;
+}
+
+#commentBtn {
+    width: 100%;
+    text-align: center;
 }

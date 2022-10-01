@@ -18,30 +18,33 @@
 
 <body>
     <header class="container-nav">
-        <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
-                alt="Inemaps Logo"></a>
+        <a href="/"><button id="nav-btn">Home</button></a>
         <nav>
             <ul class="container-links">
+                <li><a href="/bloques">Blocks</a></li>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li><a href="/posts">Publications</a></li>
+                <% } %>
+
                 <% if(!req.isAuthenticated()) { %>
                     <li><a href="/users/login">Log in</a> </li>
-                    <% } %>
-                        <% if(req.isAuthenticated()) { %>
-                            <li><a href="/posts">Publications</a></li>
-                            <% } %>
-                                <li><a href="/bloques">Blocks</a></li>
-                                <% if(req.isAuthenticated()) { %>
-                                    <li>
-                                        <a href="">Profile</a>
-                                        <ul class="menu-vertical">
-                                            <li><br>Welcome!</li>
-                                            <li><a href="/users/dashboard">View my profile</a></li>
-                                            <li><a href="/users/logout">Log out</a></li>
-                                        </ul>
-                                    </li>
-                                    <% } %>
+                <% } %>
+                
+                <% if(req.isAuthenticated()) { %>
+                    <li>
+                        <a id="profile-link" href="">Profile</a>
+                        <ul class="menu-vertical">
+                            <li><br>Welcome!</li>
+                            <li><a href="/users/dashboard">View my profile</a></li>
+                            <li><a href="/users/logout">Log out</a></li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
         </nav>
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a class="container-logo" href="/"><img id="nav-logo"
+                src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
     </header>
 
 
