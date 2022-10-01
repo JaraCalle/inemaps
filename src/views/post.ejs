@@ -61,12 +61,17 @@
                         </p>
                     </div>
                     <div class="post-content">
+                        <% for(var k = 0; k < resUsers.rowCount; k++ ) {%>
+                            <% if( resUsers.rows[k].id == results.rows[0].codigoestudiante ) {%>
+                                    <p>
+                                        <strong>
+                                            <%= resUsers.rows[k].name %>
+                                        </strong>
+                                    </p>
+                            <% } %>
+                        <% } %>
                         <p>
                             <%= results.rows[0].descripcion%>
-                        </p>
-                        <p>ID Author: <%= results.rows[0].codigoestudiante%>
-                        </p>
-                        <p>ID Author: <%= results.rows[0].name%>
                         </p>
                         <% for(var j=0; j < resul.rowCount; j++) {%>
                             <% if(results.rows[0].idcategoria==resul.rows[j].idcategoria) {%>

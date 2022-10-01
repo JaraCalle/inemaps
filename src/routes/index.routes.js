@@ -2,20 +2,24 @@ const { Router } = require("express");
 const router = Router()
 const passport = require('passport')
 const initializePassport = require('../passportConfig')
+const moment = require('moment');
 
 const { pool } = require('../dbConfig')
 const bcrypt = require('bcrypt')
 const today = new Date();
 
+
 const bloquesJS = require('../Bloques');
 
 const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+const date2 = moment().format();
 
 initializePassport(passport)
 
 router.get('/', (req, res) => {
     res.render('index', {req})
     console.log(req.user)
+    console.log(date)
 })
 
 router.get('/users/register', checkAunthenticated, (req, res) => {
@@ -92,7 +96,7 @@ router.post('/crear/post', checkNotAunthenticated, (req, res) => {
     const { titlepost, description, categoria } = req.body
     console.log(req.body)
     if (req.isAuthenticated()) {
-        pool.query(`INSERT INTO posts(titlepost, fechapublicacion, descripcion, idcategoria, codigoestudiante) VALUES ('${titlepost}', '${date}', '${description}', '${categoria}', ${id})`, (err, results) => {
+        pool.query(`INSERT INTO posts(titlepost, fechapublicacion, descripcion, idcategoria, codigoestudiante) VALUES ('${titlepost}', '${date2}', '${description}', '${categoria}', ${id})`, (err, results) => {
             if (err) {
                 throw err
             }
@@ -105,23 +109,6 @@ router.post('/crear/post', checkNotAunthenticated, (req, res) => {
         res.send('received')
     }
 
-})
-
-router.post('/posts/:id', checkNotAunthenticated, (req,res) => {
-    if(req.isAuthenticated()){
-        const {description} = req.body
-        const {id} = req.user
-        console.log(req.params.id)
-        pool.query(`INSERT INTO comentarios(descripcion, fechapublicacion, codigoestudiante, idpost) VALUES('${description}', '${date}', ${id}, ${req.params.id})`, (err, results) => {
-            if(err){
-                throw err
-            }else {
-                res.redirect(`/posts/${req.params.id}`)
-            }
-        })
-    }else {
-        res.redirect('/')
-    }
 })
 
 router.get('/posts/:id', (req, res) => {
@@ -139,11 +126,30 @@ router.get('/posts/:id', (req, res) => {
                         if (resu.rowCount > 0) {
                             console.log(resu.rows)
                             pool.query('SELECT * FROM categoria', (err, resul) => {
-                                res.render('post', { results, resu, req, resul })
+                                if(err){
+                                    throw err
+                                }
+
+                                pool.query('SELECT * FROM users', (err, resUsers) => {
+                                    if(err){
+                                        throw err
+                                    }
+                                    res.render('post', { results, resu, req, resul, resUsers })
+                                })
                             })
                         }else {
                             pool.query('SELECT * FROM categoria', (err, resul) => {
-                                res.render('post', {results, resu:0, req, resul})
+                                if(err){
+                                    throw err
+                                }
+
+                                pool.query('SELECT * FROM users', (err, resUsers) => {
+                                    if(err){
+                                        throw err
+                                    }
+
+                                    res.render('post', {results, resu:0, req, resul, resUsers})
+                                })
                             })
                         }
                     }
@@ -152,6 +158,24 @@ router.get('/posts/:id', (req, res) => {
         }
     })
 })
+
+router.post('/posts/:id', checkNotAunthenticated, (req,res) => {
+    if(req.isAuthenticated()){
+        const {description} = req.body
+        const {id} = req.user
+        console.log(req.params.id)
+        pool.query(`INSERT INTO comentarios(descripcion, fechapublicacion, codigoestudiante, idpost) VALUES('${description}', '${date2}', ${id}, ${req.params.id})`, (err, results) => {
+            if(err){
+                throw err
+            }else {
+                res.redirect(`/posts/${req.params.id}`)
+            }
+        })
+    }else {
+        res.redirect('/')
+    }
+})
+
 
 router.post('/users/register', async (req, res) => {
     let { id, name, email, password, password2 } = req.body;
