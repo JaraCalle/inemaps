@@ -17,13 +17,13 @@
 
 <body>
     <header class="container-nav">
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
                 
                 <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
+                    <li><a href="/posts">Publicaciones</a></li>
                 <% } %>
 
                 <% if(!req.isAuthenticated()) { %>
@@ -32,11 +32,11 @@
                 
                 <% if(req.isAuthenticated()) { %>
                     <li>
-                        <a href="">Profile</a>
+                        <a href="">Perfil</a>
                         <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
+                            <li><br>¡Bienvenido!</li>
+                            <li><a href="/users/dashboard">Ver mi perfil</a></li>
+                            <li><a href="/users/logout">Cerrar sesion</a></li>
                         </ul>
                     </li>
                 <% } %>
@@ -50,7 +50,7 @@
         <div class="main-background minimum-sizes all">
             <div class="posts-description">
                 <h1 class="main-title">
-                    Welcome to the posts section
+                    Bienvenido a la seccion de publicaciones
                 </h1>
                 <ul>
                     <% if(messages.succes_msg) {%>
@@ -61,7 +61,7 @@
                 </ul>
             </div>
             <div id="newPostBtn">
-                <a href="/crear/post"><button>Make a new post</button></a>
+                <a href="/crear/post"><button>Crear nueva publicacion</button></a>
             </div>
             <div class="posts">
                 <% for(var i=0; i < results.rowCount; i++) {%>
@@ -98,7 +98,7 @@
                             <p>
                                 <%= format(results.rows[i].fechapublicacion) %>
                             </p>
-                            <a href="/posts/<%- results.rows[i].idpost %> "><span>View post</span></a>
+                            <a href="/posts/<%- results.rows[i].idpost %> "><span>Ver publicacion</span></a>
                         </div>
                     </div>
                     <% } %>

@@ -14,13 +14,13 @@
 
 <body>
     <header class="container-nav">
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
 
                 <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
+                    <li><a href="/posts">Publicaciones</a></li>
                     <% } %>
 
                         <% if(!req.isAuthenticated()) { %>
@@ -29,11 +29,11 @@
 
                                 <% if(req.isAuthenticated()) { %>
                                     <li>
-                                        <a href="">Profile</a>
+                                        <a href="">Perfil</a>
                                         <ul class="menu-vertical">
-                                            <li><br>Welcome!</li>
-                                            <li><a href="/users/dashboard">View my profile</a></li>
-                                            <li><a href="/users/logout">Log out</a></li>
+                                            <li><br>¡Bienvenido!</li>
+                                            <li><a href="/users/dashboard">Ver mi perfil</a></li>
+                                            <li><a href="/users/logout">Cerrar sesion</a></li>
                                         </ul>
                                     </li>
                                     <% } %>
@@ -47,7 +47,7 @@
         <div class="main-background minimum-sizes all">
             <div class="all-content">
                 <div class="goBackBtn">
-                    <a href="/posts"><button>Go back</button></a>
+                    <a href="/posts"><button>Volver</button></a>
                 </div>
                 <div class="post">
                     <p>Post N°<%= results.rows[0].idpost %>
@@ -86,11 +86,11 @@
             <div class="container-comentarios-form">
                 <div class="comentarios-form">
                     <form action="/posts/<%- req.params.id %> " method="POST">
-                        <textarea class="dark" type="text" name="description" placeholder="Write something..."
+                        <textarea class="dark" type="text" name="description" placeholder="Escribe algo..."
                             required></textarea>
                         <!-- <input type="text" class="dark" name="description" placeholder="Comment"> -->
                         <div id="commentBtn">
-                            <button type="submit">Comment</button>
+                            <button type="submit">Comentar</button>
                         </div>
                         <!-- <input type="submit" value="Submit"> -->
                     </form>
@@ -98,7 +98,7 @@
             </div>
             <div class="comentarios">
                 <h4 class="main-title">
-                    Comments
+                    Comentarios
                 </h4>
                 <% if(resu==0) {%>
                     <p>There's no comments yet, would you like to be the first?</p>

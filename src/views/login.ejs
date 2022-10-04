@@ -15,26 +15,26 @@
 
 <body>
     <header class="container-nav">
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
                 
                 <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
+                    <li><a href="/posts">Publicaciones</a></li>
                 <% } %>
 
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/register">Register</a></li>
+                    <li><a href="/users/register">Registrarse</a></li>
                 <% } %>
                 
                 <% if(req.isAuthenticated()) { %>
                     <li>
-                        <a href="">Profile</a>
+                        <a href="">Perfil</a>
                         <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
+                            <li><br>¡Bienvenido!</li>
+                            <li><a href="/users/dashboard">Ver mi perfil</a></li>
+                            <li><a href="/users/logout">cerrar sesion</a></li>
                         </ul>
                     </li>
                 <% } %>
@@ -48,7 +48,7 @@
         <div class="main-background minimum-sizes all">
             <div class="login-container">
                 <div class="login-text">
-                    <h1>Log in</h1>
+                    <h1>Iniciar sesion</h1>
     
                     <ul>
                         <% if(messages.succes_msg) {%>
@@ -71,18 +71,18 @@
                     <form action="/users/login" method="POST">
                         <div>
                             <input class="simple-text dark input-text" type="email" name="email" id="email"
-                                    placeholder="Email" autofocus required />
+                                    placeholder="Correo" autofocus required />
                         </div>
                         <div>
                             <input class="simple-text dark input-text" type="password" name="password" id="password"
-                                placeholder="Password" required />
+                                placeholder="Contraseña" required />
                         </div>
                         <div>
-                            <button type="submit" id="login-btn">Login</button>
+                            <button type="submit" id="login-btn">Iniciar sesion</button>
                         </div>
                         <p>
-                            U don't have an account?
-                            <a href="/users/register"><span>Register here</span></a>
+                            ¿No tienes una cuenta?
+                            <a href="/users/register"><span>Registrate aqui</span></a>
                         </p>
                     </form>
                 </div>
