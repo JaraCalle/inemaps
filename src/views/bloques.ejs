@@ -49,7 +49,7 @@
             <div class="blocks-section1">
                 
                 <% for(var i = 0; i < bloquesJS.length; i++){ %>
-                    <div class="block-element hide-category" id=" <%= bloquesJS[i].id %> ">
+                    <div class="block-element hide-category" id="<%= bloquesJS[i].id%>">
                         <div class="image">
                             <img src="<%= bloquesJS[i].img %>" alt="bloque turituki">
                         </div>
@@ -81,9 +81,40 @@
         let bloque7A = document.getElementById("8");
         let bloque7B = document.getElementById("9");
         let bloque8 = document.getElementById("10");
+        let bloque4 = document.getElementById("11");
         let imgchange = document.getElementById("imgchange");
 
         bloque1.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
+        }
+        bloque2.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/RZsdLK4M/MapaInem.jpg";
+        }
+        bloque3.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
+        }
+        bloque5A.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/RZsdLK4M/MapaInem.jpg";
+        }
+        bloque5B.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
+        }
+        bloque6A.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/RZsdLK4M/MapaInem.jpg";
+        }
+        bloque6B.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
+        }
+        bloque7A.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/RZsdLK4M/MapaInem.jpg";
+        }
+        bloque7B.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
+        }
+        bloque8.onclick = function() {
+            imgchange.src = "https://i.postimg.cc/RZsdLK4M/MapaInem.jpg";
+        }
+        bloque4.onclick = function() {
             imgchange.src = "https://i.postimg.cc/fy7nVB4W/Mapa-Inem1.jpg";
         }
 
