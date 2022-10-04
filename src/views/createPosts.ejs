@@ -43,22 +43,30 @@
         <a class="container-logo" href="/"><img id="nav-logo"
                 src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
     </header>
-    <main class="main-background minimum-sizes all">
-        <div class="container-main">
+    <main>
+        <div class="main-background minimum-sizes all">
             <button><a href="/posts">Go back</a></button>
-                <form action="/crear/post" method="POST">
-                    <input class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus>
-                    <input class="dark" type="text" name="description" placeholder="Description" required>
-                    <select class="dark" name="categoria">
-                        <option class="dark" value=1 selected>Información</option>
-                        <option class="dark" value=2>Eventos</option>
-                        <option class="dark" value=3>Quejas</option>
-                        <option class="dark" value=4>Dudas</option>
-                    </select>
-                    <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
-                    <input class="dark" type="submit" value="Enviar">
-                </form>
-            
+            <div class="container-form">
+                    <form action="/crear/post" method="POST">
+                        <textarea class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus></textarea>
+                        <!-- <input class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus> -->
+                        <textarea class="dark" type="text" name="description" placeholder="Description" required></textarea>
+                        <!-- <input class="dark" type="text" name="description" placeholder="Description" required> -->
+                        <div class="container-select">
+                            <select class="dark" name="categoria">
+                                <option class="dark" value=1 selected>Información</option>
+                                <option class="dark" value=2>Eventos</option>
+                                <option class="dark" value=3>Quejas</option>
+                                <option class="dark" value=4>Dudas</option>
+                            </select>
+                        </div>
+                        <div id="publicateBtn">
+                            <button type="submit">Enviar</button>
+                            <!-- <input class="dark" type="submit" value="Enviar"> -->
+                        </div>
+                        <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
+                    </form>
+            </div>
         </div>
     </main>
     <footer>

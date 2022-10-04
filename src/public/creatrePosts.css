@@ -1,9 +1,28 @@
-
-.container-main {
-    background-color: var(--s-black);
+.container-form {
+    background-color: var(--p-black);
     min-width: 30vw;
     max-width: 80vw;
     text-align: center;
-    padding: 15px;
+    padding: 1.5rem;
     border-radius: 20px;
+}
+
+.container-form form {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 1em;
+}
+
+.container-form form textarea {
+    border-radius: 20px;
+    border: 0px;
+    padding: 12px 20px;
+    resize: none;
+    min-width: 40vw;
+    height: auto;
+    box-shadow: 0px 0px 5px black;
+}
+
+.container-form form textarea:nth-child(2) {
+    min-height: 15vh;
 }

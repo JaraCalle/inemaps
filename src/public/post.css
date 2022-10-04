@@ -1,3 +1,7 @@
+.goBackBtn {
+    text-align: right;
+}
+
 .post {
     background-color: var(--p-black);
     border-radius: 20px;
@@ -51,6 +55,31 @@
     text-align: center;
 }
 
+.comentarios {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    row-gap: 1em;
+}
+
 .comentarios h4 {
     font-size: xx-large;
+}
+
+.comentario {
+    background-color: var(--p-black);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black;
+    padding: 1.1rem;
+    height: auto;
+    width: 40vw;
+    word-wrap: break-word;
+}
+
+.comentario p:first-child {
+    opacity: .8;
+}
+
+.comentario p:nth-child(3) {
+    opacity: .7;
 }
