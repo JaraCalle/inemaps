@@ -15,26 +15,26 @@
 
 <body>
     <header class="container-nav">
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
                 
                 <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
+                    <li><a href="/posts">Publicaciones</a></li>
                 <% } %>
 
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Log in</a> </li>
+                    <li><a href="/users/login">Iniciar sesion</a> </li>
                 <% } %>
                 
                 <% if(req.isAuthenticated()) { %>
                     <li>
-                        <a href="">Profile</a>
+                        <a href="">Perfil</a>
                         <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
+                            <li><br>¡Bienvenido!</li>
+                            <li><a href="/users/dashboard">Ver perfil</a></li>
+                            <li><a href="/users/logout">Cerrar sesion</a></li>
                         </ul>
                     </li>
                 <% } %>
@@ -48,7 +48,7 @@
         <div class="main-background minimum-sizes all">
             <div class="login-container">
                 <div class="login-text">
-                    <h1>Register</h1>
+                    <h1>Registrarse</h1>
             
                     <ul>
                         <% if(typeof errors !='undefined' ) { %>
@@ -64,24 +64,24 @@
                 <div class="login-input">
                     <form action="/users/register" method="POST">
                         <div>
-                            <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Student code" required>
+                            <input class="simple-text dark input-text" type="number" name="id" id="id" placeholder="Codigo de estudiante" required>
                         </div>
                         <div>
-                            <input class="simple-text dark input-text" type="text" name="name" id="name" placeholder="Name" size="35" autofocus required>
+                            <input class="simple-text dark input-text" type="text" name="name" id="name" placeholder="Nombre" size="35" autofocus required>
                         </div>
                         <div>
-                            <input class="simple-text dark input-text" type="email" name="email" id="email" placeholder="Email" size="35" required>
+                            <input class="simple-text dark input-text" type="email" name="email" id="email" placeholder="Correo" size="35" required>
                         </div>
                         <div>
-                            <input class="simple-text dark input-text" type="password" name="password" id="password" placeholder="Password" size="35" required>
+                            <input class="simple-text dark input-text" type="password" name="password" id="password" placeholder="Contraseña" size="35" required>
                         </div>
                         <div>
-                            <input class="simple-text dark input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" size="35" required>
+                            <input class="simple-text dark input-text" type="password" name="password2" id="password2" placeholder="Confirmar contraseña" size="35" required>
                         </div>
                         <div>
-                            <button type="submit" id="login-btn">Register</button>
+                            <button type="submit" id="login-btn">Registrarse</button>
                         </div>
-                        <p>Already registered? <a href="/users/login"><span>Login here</span></a></p>
+                        <p>¿Ya estas registrado? <a href="/users/login"><span>Inicia sesion aqui</span></a></p>
                     </form>
                 </div>
             </div>

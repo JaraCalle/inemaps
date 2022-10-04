@@ -18,26 +18,26 @@
 
 <body>
     <header class="container-nav">
-        <a href="/"><button id="nav-btn">Home</button></a>
+        <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
                 
                 <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
+                    <li><a href="/posts">Publicaciones</a></li>
                 <% } %>
 
                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Log in</a> </li>
+                    <li><a href="/users/login">Iniciar sesion</a> </li>
                 <% } %>
                 
                 <% if(req.isAuthenticated()) { %>
                     <li>
-                        <a id="profile-link" href="">Profile</a>
+                        <a id="profile-link" href="">Perfil</a>
                         <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
+                            <li><br>¡Bienvenido!</li>
+                            <li><a href="/users/dashboard">Ver mi perfil</a></li>
+                            <li><a href="/users/logout">Cerrar sesion</a></li>
                         </ul>
                     </li>
                 <% } %>
