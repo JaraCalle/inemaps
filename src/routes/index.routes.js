@@ -31,7 +31,7 @@ router.get('/users/login', checkAunthenticated, (req, res) => {
 })
 
 router.get('/users/dashboard', checkNotAunthenticated, (req, res) => {
-    var ranNum = Math.floor(Math.random() * 11) + 1;
+    var ranNum = Math.floor(Math.random() * images.length) + 1;
     res.render('dashboard', { user: req.user.name, req, ranNum, images})
     console.log(ranNum)
 })

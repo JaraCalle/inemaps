@@ -1,11 +1,11 @@
 module.exports = [
     {
         id: 1,
-        image: 'https://i.ytimg.com/vi/XMuSD0FrEqo/maxresdefault.jpg'
+        image: 'https://media.giphy.com/media/yr7n0u3qzO9nG/giphy.gif'
     },
     {
         id: 2,
-        image: 'https://i1.sndcdn.com/avatars-WggpF1kuVv0c2J13-ZXk6CA-t500x500.jpg'
+        image: 'https://i.pinimg.com/originals/48/e9/d7/48e9d7451d895ce83d6b7825ebf9162a.gif'
     },
     {
         id: 3,
@@ -13,15 +13,15 @@ module.exports = [
     },
     {
         id: 4,
-        image: 'https://pbs.twimg.com/profile_images/1277068236165701632/YImAA5OG_400x400.jpg'
+        image: 'https://i.kym-cdn.com/photos/images/newsfeed/002/052/327/b2d'
     },
     {
         id: 5,
-        image: 'https://i.ytimg.com/vi/c1uF6bXtYM8/hqdefault.jpg'
+        image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/homer-meme-1547553537.gif'
     },
     {
         id: 6,
-        image: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f4fe1423b139ec56b3707c2ff1557661~c5_720x720.jpeg?x-expires=1665046800&x-signature=sCZVbEFv1AAL9IE3CCyE6ihHspc%3D'
+        image: 'https://www.gifcen.com/wp-content/uploads/2021/03/memes-gif-9.gif'
     },
     {
         id: 7,
@@ -42,5 +42,9 @@ module.exports = [
     {
         id: 11,
         image: 'https://64.media.tumblr.com/1760755f8cc7d7e2086663f54f20de23/tumblr_pg9emwHjpB1v1tlts_640.jpg'
+    },
+    {
+        id: 12,
+        image: 'https://media.tenor.com/sOqavSedrzoAAAAd/esqueleto-bailando-esqueleto.gif'
     }
 ]
