@@ -22,29 +22,29 @@
         <nav>
             <ul class="container-links">
                 <li><a href="/bloques">Blocks</a></li>
-                
-                <% if(req.isAuthenticated()) { %>
-                    <li><a href="/posts">Publications</a></li>
-                <% } %>
 
-                <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Log in</a> </li>
-                <% } %>
-                
                 <% if(req.isAuthenticated()) { %>
-                    <li>
-                        <a id="profile-link" href="">Profile</a>
-                        <ul class="menu-vertical">
-                            <li><br>Welcome!</li>
-                            <li><a href="/users/dashboard">View my profile</a></li>
-                            <li><a href="/users/logout">Log out</a></li>
-                        </ul>
-                    </li>
-                <% } %>
+                    <li><a href="/posts">Publicaciones>
+                            <% } %>
+
+                                <% if(!req.isAuthenticated()) { %>
+                    <li><a href="/users/login">Log in</a> </li>
+                    <% } %>
+
+                        <% if(req.isAuthenticated()) { %>
+                            <li>
+                                <a id="profile-link" href="">Perfil</a>
+                                <ul class="menu-vertical">
+                                    <li><br>Welcome!</li>
+                                    <li><a href="/users/dashboard">Ver mi perfil</a></li>
+                                    <li><a href="/users/logout">Cerrar sesion</a></li>
+                                </ul>
+                            </li>
+                            <% } %>
             </ul>
         </nav>
-        <a class="container-logo" href="/"><img id="nav-logo"
-                src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
+        <a class="container-logo" href="/"><img id="nav-logo" src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png"
+                alt="Inemaps Logo"></a>
     </header>
 
 
@@ -54,12 +54,14 @@
                 <h1 class="main-title">
                     Inemaps
                 </h1>
-                <p class="simple-text">We are a web page focused on orientation within the Educational Institution INEM
-                    José Félix de Restrepo, with a module where each block of the institution can be viewed and
-                    important information within them such as the location of the rooms and the nucleus to which they
-                    belong. <br><br>
-                    We also have a space for communication and interaction between students belonging to the
-                    institution.</p>
+                <p class="simple-text">Somos una página web enfocada a la orientación dentro de la Institución Educativa
+                    INEM
+                    José Félix de Restrepo, en una vista se puede visualizar cada bloque de la institución e
+                    información importante dentro de ellos como la ubicación de las aulas y el núcleo al que
+                    pertenece. <br><br>
+                    También contamos con un espacio de comunicación e interacción entre los estudiantes pertenecientes a
+                    la
+                    institución.</p>
             </div>
             <div class="description-logo">
                 <img id="home-logo" src="https://i.postimg.cc/R0z1ky3x/Mainlogo-Inemaps.png">
@@ -70,10 +72,8 @@
 
     <section class="team">
         <div class="team-descripcion">
-            <h1 class="main-title">Team</h1>
-            <p class="simple-text">The Inemaps development team is made up of five students from the INEM José Félix de
-                Restrepo Educational Institution in order to successfully complete the degree project that demonstrates
-                the skills achieved during the technical average in programming.
+            <h1 class="main-title">Equipo</h1>
+            <p class="simple-text">El equipo de desarrollo de Inemaps está conformado por cinco estudiantes de la Institución Educativa INEM José Félix de Restrepo con el fin de culminar con éxito el proyecto de grado que demuestre las competencias alcanzadas durante el medio técnico en programación.
             </p>
         </div>
         <div class="integrantes">
@@ -81,7 +81,7 @@
                 <img src="https://i.postimg.cc/VkYxGw9d/profile-pic-1.jpg" alt="Nicky Florez">
                 <div class="card-contenido">
                     <h3>Nicky Florez</h3>
-                    <p>Eleventh grade student, in charge of the development of the back end of the project.</p>
+                    <p>Estudiante de grado 11, a cargo del desarrollo del back end del proyecto.</p>
                     <div class="social-container">
                         <a href="https://github.com/DorkoSpron0" target="_blank" class="fa fa-github"></a>
                     </div>
@@ -91,7 +91,7 @@
                 <img src="https://i.postimg.cc/DfP5CXxP/profile-pic-2.png" alt="Juan David">
                 <div class="card-contenido">
                     <h3>Juan David</h3>
-                    <p>Eleventh grade student, in charge of the development of the project interface.</p>
+                    <p>Estudiante de grado 11, a cargo del desarrollo de la interfaz del proyecto.</p>
                     <div class="social-container">
                         <a href="https://github.com/LarreaJD" target="_blank" class="fa fa-github"></a>
                     </div>
@@ -101,7 +101,7 @@
                 <img src="https://i.postimg.cc/j2fDFPbQ/profile-pic-3.png" alt="Juan José">
                 <div class="card-contenido">
                     <h3>Juan José Jara</h3>
-                    <p>Eleventh grade student, in charge of developing the project's database.<br><br></p>
+                    <p>Estudiante de grado 11, encargado de desarrollar y administrar la base de datos del proyecto.<br><br></p>
                     <div class="social-container">
 
                         <a href="https://github.com/JaraCalle" target="_blank" class="fa fa-github"></a>
@@ -112,7 +112,7 @@
                 <img src="https://i.postimg.cc/RF6hWKN5/profile-pic-4.png" alt="Jimena Muñoz">
                 <div class="card-contenido">
                     <h3>Jimena Muñoz</h3>
-                    <p>Eleventh grade student, in charge of the development of the project interface.</p>
+                    <p>Estudiante de grado 11, a cargo del desarrollo de la interfaz del proyecto</p>
                     <div class="social-container">
 
                         <a href="https://github.com" target="_blank" class="fa fa-github"></a>
@@ -123,7 +123,7 @@
                 <img src="https://i.postimg.cc/15ZXzgS2/profile-pic-5.png" alt="Daniel Santana">
                 <div class="card-contenido">
                     <h3>Daniel Santana</h3>
-                    <p>Eleventh grade student, in charge of the development of the project interface.</p>
+                    <p>Estudiante de grado 11, a cargo del desarrollo principal de la interfaz del proyecto</p>
                     <div class="social-container">
                         <a href="https://github.com/Tazana2" target="_blank" class="fa fa-github"></a>
                     </div>
