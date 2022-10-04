@@ -21,21 +21,21 @@
         <a href="/"><button id="nav-btn">Inicio</button></a>
         <nav>
             <ul class="container-links">
-                <li><a href="/bloques">Blocks</a></li>
+                <li><a href="/bloques">Bloques</a></li>
 
                 <% if(req.isAuthenticated()) { %>
                     <li><a href="/posts">Publicaciones>
                             <% } %>
 
                                 <% if(!req.isAuthenticated()) { %>
-                    <li><a href="/users/login">Log in</a> </li>
+                    <li><a href="/users/login">Iniciar sesion</a> </li>
                     <% } %>
 
                         <% if(req.isAuthenticated()) { %>
                             <li>
                                 <a id="profile-link" href="">Perfil</a>
                                 <ul class="menu-vertical">
-                                    <li><br>Welcome!</li>
+                                    <li><br>¡Bienvenido!</li>
                                     <li><a href="/users/dashboard">Ver mi perfil</a></li>
                                     <li><a href="/users/logout">Cerrar sesion</a></li>
                                 </ul>
