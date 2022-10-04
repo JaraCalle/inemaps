@@ -3,11 +3,11 @@ const router = Router()
 const passport = require('passport')
 const initializePassport = require('../passportConfig')
 const moment = require('moment');
+const images = require('../images')
 
 const { pool } = require('../dbConfig')
 const bcrypt = require('bcrypt')
-const today = new Date();
-
+var today = new Date();
 
 const bloquesJS = require('../Bloques');
 
@@ -31,7 +31,9 @@ router.get('/users/login', checkAunthenticated, (req, res) => {
 })
 
 router.get('/users/dashboard', checkNotAunthenticated, (req, res) => {
-    res.render('dashboard', { user: req.user.name, req })
+    var ranNum = Math.floor(Math.random() * 11) + 1;
+    res.render('dashboard', { user: req.user.name, req, ranNum, images})
+    console.log(ranNum)
 })
 
 router.get('/users/logout', (req, res, next) => {

@@ -211,3 +211,17 @@ footer {
         height: 40px;
     }
 }
+
+
+/*Imagen dinda :D*/
+.container-img img {
+    height: 250px;
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid  var(--p-green);
+    transition: all .5s;
+}
+
+.container-img img:hover {
+    box-shadow: 10px 15px 0px var(--lighter-green);
+}

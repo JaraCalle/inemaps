@@ -46,8 +46,17 @@
     <main>
         <div class="main-background minimum-sizes all">
             <a href="/users/logout"><button>cerrar sesion</button></a>
+            <div class="container-img">
+                <% for(var i = 0; i < images.length; i++ ) { %>
+                    <% if(images[i].id == ranNum) { %>
+                        <img src="<%= images[i].image %>" alt="">
+                    <% } %>
+                <% } %>    
+            </div>
+
             <h1>Hola <%= user %>
             </h1>
+
             <a href="/crear/post"><span>CREAR</span></a>
         </div>
     </main>
