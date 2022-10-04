@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/j5wK5dpr/unnamed.png%22%3E" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/creatrePosts.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Inemaps</title>
 </head>
@@ -42,26 +43,28 @@
         <a class="container-logo" href="/"><img id="nav-logo"
                 src="https://i.postimg.cc/MHRb3QWv/inemaps-nav-logo2.png" alt="Inemaps Logo"></a>
     </header>
-
-    <main>
-        <button><a href="/posts">Go back</a></button>
-        <div class="main-background" style="min-height: 81.8vh">
-
-            <form action="/crear/post" method="POST">
-                <input class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus>
-                <input class="dark" type="text" name="description" placeholder="Description" required>
-                <select class="dark" name="categoria">
-                    <option class="dark" value=1 selected>Información</option>
-                    <option class="dark" value=2>Eventos</option>
-                    <option class="dark" value=3>Quejas</option>
-                    <option class="dark" value=4>Dudas</option>
-                </select>
-                <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
-                <input class="dark" type="submit" value="Enviar">
-            </form>
+    <main class="main-background minimum-sizes all">
+        <div class="container-main">
+            <button><a href="/posts">Go back</a></button>
+                <form action="/crear/post" method="POST">
+                    <input class="dark" type="text" name="titlepost" placeholder="Titulo" required autofocus>
+                    <input class="dark" type="text" name="description" placeholder="Description" required>
+                    <select class="dark" name="categoria">
+                        <option class="dark" value=1 selected>Información</option>
+                        <option class="dark" value=2>Eventos</option>
+                        <option class="dark" value=3>Quejas</option>
+                        <option class="dark" value=4>Dudas</option>
+                    </select>
+                    <!-- <input class="dark" type="text" name="categoria" placeholder="Categoria"> -->
+                    <input class="dark" type="submit" value="Enviar">
+                </form>
+            
         </div>
-
     </main>
+    <footer>
+        <h4>Todos los derechos reservados.</h4>
+        <p>Copyright &copy; 2022</p>
+    </footer>
 </body>
 
 </html>
