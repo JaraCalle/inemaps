@@ -64,7 +64,7 @@
                         </p>
                     </div>
                     <div class="post-content">
-                        <% for(var k = 0; k < resUsers.rowCount; k++ ) {%>
+                        <% for(var k = 0; k < resUsers.rowCount; k++ ) { %>
                             <% if( resUsers.rows[k].id == results.rows[0].codigoestudiante ) {%>
                                     <p>
                                         <strong>
@@ -104,14 +104,22 @@
                     Comentarios
                 </h4>
                 <% if(resu==0) {%>
-                    <p>There's no comments yet, would you like to be the first?</p>
+                    <p>Theres no comments yet, would you like to be the first?</p>
                 <% } else { %>
                     <% for(var i=0; i < resu.rowCount; i++) { %>
                         <div class="comentario">
                             <!-- <p> idcomentario = <%= resu.rows[i].idcomentario %></p> -->
                             <p>
                                 <strong>
-                                    ID Autor: <%= resu.rows[i].codigoestudiante %>
+                                    <% for(var k = 0; k < resUsers.rowCount; k++ ) { %>
+                                        <% if( resUsers.rows[k].id == resu.rows[i].codigoestudiante ) {%>
+                                                <p>
+                                                    <strong>
+                                                        <%= resUsers.rows[k].name %>
+                                                    </strong>
+                                                </p>
+                                        <% } %>
+                                    <% } %>
                                 </strong>
                             </p>
                             <br>
