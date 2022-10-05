@@ -25,26 +25,38 @@ module.exports = [
     },
     {
         id: 7,
-        image: 'http://images3.memedroid.com/images/UPLOADED485/5ba03c72550da.jpeg'
+        image: 'https://i.pinimg.com/originals/e9/84/26/e9842681e64c6dc74e8227d790e9306f.gif'
     },
     {
         id: 8,
-        image: 'https://i.pinimg.com/736x/fd/1b/43/fd1b43e4ae73a3d6205e7bd64784daba.jpg'
+        image: 'https://i.gifer.com/origin/a1/a1c785521fa27b19fb361dbfb134e7cb_w200.gif'
     },
     {
         id: 9,
-        image: 'https://pleated-jeans.com/wp-content/uploads/2020/04/ohh-so-that-why-they-call-them-cursed-images-25-pics-7.jpg'
+        image: 'https://i.pinimg.com/originals/35/1c/8a/351c8a0fbabdc2196e3e1542e5335c2f.gif'
     },
     {
         id: 10,
-        image: 'https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/91405fd9e247204794e5c7ad29683727.jpeg?x-expires=1664935200&x-signature=GmDhrWhqNn%2FC6By%2Fx%2FFA19AsXkU%3D'
+        image: 'https://media.tenor.com/GIVLitDIxr8AAAAM/breaking-bad-walter-white.gif'
     },
     {
         id: 11,
-        image: 'https://64.media.tumblr.com/1760755f8cc7d7e2086663f54f20de23/tumblr_pg9emwHjpB1v1tlts_640.jpg'
+        image: 'https://c.tenor.com/pMhSj9NfCXsAAAAC/saul-goodman-better-call-saul.gif'
     },
     {
         id: 12,
         image: 'https://media.tenor.com/sOqavSedrzoAAAAd/esqueleto-bailando-esqueleto.gif'
+    },
+    {
+        id: 13,
+        image: 'https://media.tenor.com/AtKPpo2MXFEAAAAM/dog-burning.gif'
+    },
+    {
+        id: 14,
+        image: 'https://wallpapers-clan.com/wp-content/uploads/2022/08/meme-gif-pfp-1.gif'
+    },
+    {
+        id: 15,
+        image: 'https://media3.giphy.com/media/11ISwbgCxEzMyY/giphy.gif'
     }
 ]
