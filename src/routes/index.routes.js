@@ -103,7 +103,7 @@ router.post('/crear/post', checkNotAunthenticated, (req, res) => {
                 throw err
             }
             else {
-                req.flash('succes_msg', 'Post added')
+                req.flash('succes_msg', 'Publicacion agregada')
                 res.redirect('/posts')
             }
         });
@@ -191,15 +191,15 @@ router.post('/users/register', async (req, res) => {
     let errors = [];
 
     if (!name || !email || !password || !password2) {
-        errors.push({ message: 'Please enter all fields' })
+        errors.push({ message: 'Por favor ingresa todos los campos' })
     }
 
     if (password.length < 6) {
-        errors.push({ message: 'Password should be at leats 6 characters' })
+        errors.push({ message: 'La contraseña debe tener al menos 6 caracteres' })
     }
 
     if (password != password2) {
-        errors.push({ message: 'Passwords do not match' })
+        errors.push({ message: 'Las contraseñas no coinciden' })
     }
 
     if (errors.length > 0) {
@@ -216,7 +216,7 @@ router.post('/users/register', async (req, res) => {
             }
             console.log(results.rows)
             if (results.rows.length > 0) {
-                errors.push({ message: "Email already registered" })
+                errors.push({ message: "Ese email ya se encuentra registrado" })
                 res.render('register', { req, errors })
             } else {
                 pool.query(
@@ -227,7 +227,7 @@ router.post('/users/register', async (req, res) => {
                         throw err
                     }
                     console.log(result.rows)
-                    req.flash('succes_msg', 'You are now registered. Please log in')
+                    req.flash('succes_msg', 'Ya te registraste. Por favor inicia sesión')
                     res.redirect('/users/login')
                 }
                 )

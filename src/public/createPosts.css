@@ -11,6 +11,7 @@
     display: flex;
     flex-flow: column wrap;
     row-gap: 1em;
+    align-items: center;
 }
 
 .container-form form textarea {
@@ -25,4 +26,28 @@
 
 .container-form form textarea:nth-child(2) {
     min-height: 15vh;
+}
+
+.container-select select::-ms-expand {
+    display: none;
+}
+
+.container-select {
+    position: relative;
+    min-width: 5vw;
+}
+
+.container-select select {
+    text-align: center;
+    appearance: none;
+	width: 100%;
+	cursor: pointer;
+    height: 2.5rem;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    color: gray;
+}
+
+.container-select select option {
+    color: gray;
 }
