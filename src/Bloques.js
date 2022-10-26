@@ -62,7 +62,19 @@ module.exports = [
     {
         id: 10,
         img: 'https://i.postimg.cc/853yFgG9/Bloque8a.jpg',
-        Titulo: 'Bloque 8',
+        Titulo: 'Bloque 8A',
         Descripcion: 'El bloque más bonito del colegio contiene las salas de programación, la biblioteca, la sala de proyecciones y todo el progreso técnologico del INEM. También tiene una tienda muy coqueta con un señor al que no debes pagarle con billetes mayores a diez mil.'
+    },
+    {
+        id: 12,
+        img: 'https://i.postimg.cc/853yFgG9/Bloque8a.jpg',
+        Titulo: 'Bloque 8B',
+        Descripcion: 'Administracion'
+    },
+    {
+        id: 13,
+        img: 'https://i.postimg.cc/853yFgG9/Bloque8a.jpg',
+        Titulo: 'Bloque 9',
+        Descripcion: 'Deportes'
     }
 ]
