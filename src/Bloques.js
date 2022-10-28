@@ -19,9 +19,9 @@ module.exports = [
     },
     {
         id: 11,
-        img: 'https://i.postimg.cc/MpqHVk3c/Bloque5a.jpg',
+        img: 'https://i.postimg.cc/D05TL7zf/Bloque4.jpg',
         Titulo: 'Bloque 4 - Industriales',
-        Descripcion: 'En este se pueden encontrar salones tanto de diseño de modas como de dibujo tecnico. También cuenta con cinco salas de computacion y multiples talleres de construccion, energia fotovoltaica, electronica y automatización. Y una area bastabte amplia para la soldadura y recorte de materiales.'
+        Descripcion: 'En este se pueden encontrar salones tanto de diseño de modas como de dibujo tecnico. También cuenta con cinco salas de computacion y multiples talleres de construccion, energia fotovoltaica, electronica y automatización. Y una area bastaste amplia para la soldadura y recorte de materiales.'
     },
     {
         id: 4,
@@ -39,18 +39,18 @@ module.exports = [
         id: 6,
         img: 'https://i.postimg.cc/FK970tRW/Bloque6a.jpg',
         Titulo: 'Bloque 6A',
-        Descripcion: 'Este bloque no cuenta con departamento, pero en este bloque se encuentra la cafetería de profesores, donde puedes conseguir un almuerzo a un precio no tan accesible, además de la unidad perteneciente al grado noveno y la sicoorientacion.'
+        Descripcion: 'Este bloque no cuenta con departamento, pero en este bloque se encuentra la cafetería de profesores, donde puedes conseguir un almuerzo a un precio no tan accesible, además de la unidad perteneciente al grado noveno y la psicoorientacion.'
     },
     {
         id: 7,
         img: 'https://i.postimg.cc/76SzN14X/Bloque6b.jpg',
         Titulo: 'Bloque 6B - Religion',
-        Descripcion: 'Este es el bloque de la unidad de grado octavo, cuenta con la sicoorientacion, y una unidad de atencion integral que es para brindar ayuda a los estudiantes.'
+        Descripcion: 'Este es el bloque de la unidad de grado octavo, cuenta con la psicoorientacion, y una unidad de atencion integral que es para brindar ayuda a los estudiantes.'
     },
     {
         id: 8,
         img: 'https://i.postimg.cc/9MxhKKcf/Bloque7a.jpg',
-        Titulo: 'Bloque 7A -Ingles',
+        Titulo: 'Bloque 7A - Ingles',
         Descripcion: 'Este bloque pertenece a la unidad de septimo y octavo. Es el bloque ubicado al frente de el aula multiple en la cual se realizan las reuniones institucionales.'
     },
     {
@@ -73,13 +73,13 @@ module.exports = [
     },
     {
         id: 12,
-        img: 'https://i.postimg.cc/853yFgG9/Bloque8a.jpg',
+        img: 'https://i.postimg.cc/gkkddLMx/Bloque8B.jpg',
         Titulo: 'Bloque 8B - Administracion',
-        Descripcion: 'Este bloue cuenta con la enfermeria, la secretaria de bienestar, la pagaduria, la oficina de calidad, cinem, almacen,supervicion de servicios generales, fuera de esto en su segundo piso cuenta con la subdireccion administrativa, y la rectoria y vicerrectoria academica. '
+        Descripcion: 'Este bloque cuenta con la enfermeria, la secretaria de bienestar, la pagaduria, la oficina de calidad, cinem, almacen,supervicion de servicios generales, fuera de esto en su segundo piso cuenta con la subdireccion administrativa, y la rectoria y vicerrectoria academica. '
     },
     {
         id: 13,
-        img: 'https://i.postimg.cc/853yFgG9/Bloque8a.jpg',
+        img: 'https://i.postimg.cc/3rZ7PFZM/Bloque9.jpg',
         Titulo: 'Bloque 9 - Educacion Fisica',
         Descripcion: 'Este bloque abarca toda la zona de deportes, contando con dos gimnasios, dos coliseos, canchas de voleibol, futbol y basquetbol, ademas de esto cuenta con aulas de taekwondo y boxeo y una casita de artes que cuenta con instrumentos musicales.'
     }
